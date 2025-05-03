@@ -71,8 +71,8 @@ const WavingHand = () => {
 const Hero = () => {
   const typedItems = [
     "Software Developer",
-    "Systems Administrator",
-    "Computer Enthusiast",
+    "Embedded Systems Engineer",
+    "Web Developer",
     "Team Leader"
   ];
 
@@ -104,12 +104,12 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Sunny</span> <WavingHand />
+            Hi, I'm <span className="text-[#915EFF]">Marwan</span> <WavingHand />
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I'm a <TypewriterText texts={typedItems} />
             <br />
-            <b>Welcome to my portfolio, please view on desktop for an interactive experience!</b>
+            <b>Welcome to my portfolio, Glad You are here!</b>
           </p>
         </div>
       </div>

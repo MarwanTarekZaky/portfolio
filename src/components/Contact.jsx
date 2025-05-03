@@ -90,9 +90,9 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "Sunny Patel",
+          to_name: "Marwan Zaky",
           from_email: form.email,
-          to_email: "sunnypatel124555@gmail.com",
+          to_email: "marwantarekzaky@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_EMAIL_JS_ACCESS_TOKEN

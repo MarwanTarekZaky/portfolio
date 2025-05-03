@@ -19,7 +19,7 @@ const ServiceCard = ({ index, title, icon }) => (
       <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col relative overflow-hidden">
         <motion.img
           src={icon}
-          alt="web-development"
+          alt="Software-development"
           className="w-16 h-16 object-contain"
           whileHover={{ rotate: 360 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -108,7 +108,7 @@ const About = () => {
               style={{ boxShadow: "0px 5px 0px 0px rgba(0,0,0,0.6)", transition: "all ease 0.1s" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open("https://www.linkedin.com/in/sunny-patel-30b460204/", "_blank")}
+              onClick={() => window.open("https://www.linkedin.com/in/marwan-tarek-566a32231/", "_blank")}
             >
               <span className="font-semibold">LinkedIn</span>
             </motion.button>
@@ -118,7 +118,7 @@ const About = () => {
               style={{ boxShadow: "0px 5px 0px 0px rgba(0,0,0,0.6)", transition: "all ease 0.1s" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open("https://github.com/sunnypatell", "_blank")}
+              onClick={() => window.open("https://github.com/MarwanTarekZaky", "_blank")}
             >
               <span className="font-semibold">GitHub</span>
             </motion.button>
@@ -136,19 +136,19 @@ const About = () => {
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.1, 0.75)}>
               <span className="mr-4 text-2xl flex-shrink-0">👨‍💻</span>
               <span>
-                I&apos;m a Software Engineer with over 4 years of experience in software development and cloud technologies.
+                I&apos;m a Software Engineer with over 2 years of experience in Web & Embedded software development.
               </span>
             </motion.li>
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.2, 0.75)}>
               <span className="mr-4 text-2xl flex-shrink-0">🎓</span>
               <span>
-                Currently working toward my Honours Bachelor of Science in Computer Science at Ontario Tech University, I&apos;m all about building reliable, scalable software that makes a difference.
+               Got my Bachelor of Science's degree with honors in Computer Science at Helwan University, I&apos;m all about building reliable, scalable software that makes a difference.
               </span>
             </motion.li>
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.3, 0.75)}>
               <span className="mr-4 text-2xl flex-shrink-0">🛠</span>
               <span>
-                From full-stack development to cloud-based solutions, I&apos;ve led enterprise-level projects that streamline operations and deliver real impact.
+                From full-stack development to Embedded systems , I&apos;ve led involved in enterprise-level projects that streamline operations and deliver real impact.
               </span>
             </motion.li>
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.4, 0.75)}>
