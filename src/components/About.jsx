@@ -83,7 +83,7 @@ const About = () => {
             <div className="w-full h-full overflow-hidden">
               <img
                 src={profilepic}
-                alt="Sunny Patel"
+                alt="Marwan Zaky"
                 className="w-full h-full object-cover"
                 style={{
                   objectFit: "cover",
