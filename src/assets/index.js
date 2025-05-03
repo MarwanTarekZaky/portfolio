@@ -23,9 +23,9 @@ import css from "./tech/css.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
-import java from "./tech/java.png";
+import CSharp from "./tech/CSharp.png";
 import ubuntu from "./tech/ubuntu.png";
-import reactjs from "./tech/reactjs.png";
+import C from "./tech/C.png";
 import postgresql from "./tech/postgresql.png";
 import mongodb from "./tech/mongodb.png";
 import linux from "./tech/linux.png";
@@ -33,18 +33,18 @@ import tailwind from "./tech/tailwind.png";
 import python from "./tech/python.png"
 import cplusplus from "./tech/c++.svg"
 import typescript from "./tech/typescript.png"
-import threejs from "./tech/threejs.svg"
+import DotNet from "./tech/DotNet.png"
 
 import azure from "./tech/azure.png";
 import powershell from "./tech/powershell.svg"
-import cisco from "./tech/cisco.svg"
-import connectwise from "./tech/connectwise.png"
+import VTest from "./tech/VTest.jpeg"
+import rider from "./tech/rider.svg"
 import virtualbox from "./tech/virtualbox.png"
 import kalilinux from "./tech/kali_linux.svg"
 import wireshark from "./tech/wireshark.png"
-import nmap from "./tech/nmap.svg"
+import Qt from "./tech/Qt.png"
 import metasploit from "./tech/metasploit.svg"
-import johntheripper from "./tech/johntheripper.svg"
+import iSystem from "./tech/iSystem.jpeg"
 import hydra from "./tech/hydra.svg"
 import aircrackng from "./tech/aircrackng.svg"
 
@@ -96,9 +96,9 @@ export {
   git,
   html,
   javascript,
-  java,
+  CSharp,
   ubuntu,
-  reactjs,
+  C,
   linux,
   tailwind,
   postgresql,
@@ -120,14 +120,14 @@ export {
   cplusplus,
   typescript,
   powershell,
-  cisco,
-  connectwise,
+  VTest,
+  rider,
   virtualbox,
   kalilinux,
   wireshark,
-  nmap,
+  Qt,
   metasploit,
-  johntheripper,
+  iSystem,
   hydra,
   aircrackng,
   photoshop,
@@ -143,7 +143,7 @@ export {
   docker,
   figma,
   mysql,
-  threejs,
+  DotNet,
   azure,
   staples
 };

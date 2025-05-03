@@ -8,26 +8,26 @@ import { textVariant } from "../utils/motion";
 import {
   python,
   javascript,
-  java,
+  CSharp,
   cplusplus,
   typescript,
   docker,
   tailwind,
-  reactjs,
+  C,
   postgresql,
   mongodb,
-  threejs,
+  DotNet,
   aws,
   ubuntu,
   powershell,
   azure,
-  cisco,
-  connectwise,
+  VTest,
+  rider,
   virtualbox,
   kalilinux,
   wireshark,
-  nmap,
-  johntheripper,
+  Qt,
+  iSystem,
   photoshop,
   premiere,
   cinema4d,
@@ -35,16 +35,14 @@ import {
 
 const programming = [
   { name: "Python", icon: python },
-  { name: "Java", icon: java },
+  { name: "CSharp", icon: CSharp },
   { name: "C++", icon: cplusplus },
   { name: "JavaScript", icon: javascript },
-  { name: "TypeScript", icon: typescript },
   { name: "Docker", icon: docker },
-  { name: "Tailwind CSS", icon: tailwind },
-  { name: "React JS", icon: reactjs },
+  { name: "C", icon: C },
   { name: "PostgreSQL", icon: postgresql },
   { name: "MongoDB", icon: mongodb },
-  { name: "Three.js", icon: threejs },
+  { name: "DotNet", icon: DotNet },
 ];
 
 const itTools = [
@@ -52,26 +50,24 @@ const itTools = [
   { name: "Ubuntu", icon: ubuntu },
   { name: "PowerShell", icon: powershell },
   { name: "Azure", icon: azure },
-  { name: "Cisco", icon: cisco },
-  { name: "ConnectWise", icon: connectwise },
+  { name: "VTest", icon: VTest },
+  { name: "rider", icon: rider },
   { name: "VirtualBox", icon: virtualbox },
   { name: "Kali Linux", icon: kalilinux },
   { name: "Wireshark", icon: wireshark },
-  { name: "Nmap", icon: nmap },
-  { name: "John the Ripper", icon: johntheripper },
+  { name: "Qt", icon: Qt },
+  { name: "iSystem", icon: iSystem },
 ];
 
 const contentProduction = [
-  { name: "Photoshop", icon: photoshop },
-  { name: "Premiere Pro", icon: premiere },
-  { name: "Cinema 4D", icon: cinema4d },
+
 ];
 
 const Tech = () => {
   const [rows, setRows] = useState({
     programming: [],
     itTools: [],
-    contentProduction: [],
+   
   });
 
   const ref = useRef(null);
@@ -116,7 +112,7 @@ const Tech = () => {
       const rowsData = {
         programming: calculateRows(window.innerWidth, programming),
         itTools: calculateRows(window.innerWidth, itTools),
-        contentProduction: calculateRows(window.innerWidth, contentProduction),
+        
       };
       setRows(rowsData);
     };
@@ -227,7 +223,7 @@ const Tech = () => {
         </motion.div>
         {renderCategory("programming", rows.programming)}
         {renderCategory("itTools", rows.itTools)}
-        {renderCategory("contentProduction", rows.contentProduction)}
+    
       </div>
     </section>
   );
