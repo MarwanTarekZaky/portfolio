@@ -49,7 +49,14 @@ import {
   financialflowimage,
   enterpriseapitester,
   github,
+  formula,
   mongodb,
+  scala3,
+  atmega,
+  amazon,
+  helwan,
+  Valeo,
+  sparksystems,
 } from "../assets";
 
 export const navLinks = [
@@ -104,26 +111,14 @@ const services = [
 
 const education = [
   {
-    title: "Honours Computer Science (H. BSc)",
-    company_name: "Ontario Tech University, Oshawa, ON",
-    icon: otu,
+    title: "Computer Science (H. BSc)",
+    company_name: "Helwan University, Cairo, Egypt",
+    icon: helwan,
     iconBg: "#fff",
-    date: "2022 - Present",
+    date: "2019 - 2023",
     points: [
-      "Dean's Honours List - Fall 2024",
-      // "Courses undertaken: Data Structures and Algorithms, OOP, REST API, Software Design, Python Data Analysis, Discrete Mathematics, Computer Architecture, Operating Systems, PostgreSQL.",
-    ],
-  },
-  {
-    title: "High School",
-    company_name: "Richmond Hill High School, ON",
-    icon: rhhs,
-    iconBg: "#fff",
-    date: "2018-2022",
-    points: [
-      "Ontario Scholar",
-      "12th Grade: 96%",
-      ,
+      "Grade: Very Good, GP: Excellent",
+      "Introduction to Computer Science, Data Structures and Algorithms, Systems Programming, Computer Architecture, Operating Systems, Databases, Computer Networks, Software Engineering, Artificial Intelligence, Machine Learning, Theory of Computation, Programming Languages, Compilers, Cybersecurity, Web Development, Human-Computer Interaction.",
     ],
   },
 ];
@@ -170,14 +165,6 @@ const technologies = [
     icon: tailwind,
   }, 
   {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Typescript",
-    icon: typescript,
-  },
-  {
     name: "AWS",
     icon: aws,
   },
@@ -187,14 +174,6 @@ const itTools = [
   {
     name: "Powershell",
     icon: powershell,
-  },
-  {
-    name: "Cisco",
-    icon: cisco,
-  },
-  {
-    name: "ConnectWise",
-    icon: connectwise,
   },
   {
     name: "VirtualBox",
@@ -211,296 +190,161 @@ const cybersecurityTools = [
     name: "Wireshark",
     icon: wireshark,
   },
-  {
-    name: "Nmap",
-    icon: nmap,
-  },
-  {
-    name: "Metasploit",
-    icon: metasploit,
-  },
-  {
-    name: "John the Ripper",
-    icon: johntheripper,
-  },
-  {
-    name: "Hydra",
-    icon: hydra,
-  },
-  {
-    name: "Aircrack-ng",
-    icon: aircrackng,
-  },
 ];
 
 const designTools = [
-  {
-    name: "Photoshop",
-    icon: photoshop,
-  },
-  {
-    name: "Premiere",
-    icon: premiere,
-  },
-  {
-    name: "Cinema 4D",
-    icon: cinema4d,
-  },
-  {
-    name: "Blender",
-    icon: blender,
-  },
+
 ];
 
 const experiences = [
   {
-    title: "IT Technician - Canada's Wonderland",
-    company_name: "Canada's Wonderland",
-    icon: wonderland,
+    title: "Web Backend Developer .net",
+    company_name: "spark systems",
+    icon: sparksystems,
     iconBg: "#fff",
-    date: "Jun. 2023 - Present",
+    date: "Jan. 2025 - Present",
     points: [
-      "Provisioned Windows PCs with MDT, and deployed scripting via PowerShell and ConnectWise.",
-      "Managed AD accounts to propagate ACLs and unified access across in-house apps, Exchange, and SharePoint.",
-      "Configured Cisco CUCM, Unity, and Finesse for stable call routing and voicemail services.",
-      "Handled switch patching and VLAN/routing via PuTTY & SecureCRT, ensuring stable network performance.",
-      "Deployed Oracle POS/KDS/Debit solutions (EMC, Simphony), tracking updates in Jira & Confluence.",
+      "• Developed and maintained scalable back-end applications with ASP.NET Core MVC, C#, Razor Pages, and Entity Framework Core, ensuring efficient data management and database interactions.",
+      "• Designed and optimized SQL Server and PostgreSQL schemas, writing complex LINQ queries for scalability and query performance.",
+      "• Applied SOLID principles and Clean Architecture, creating maintainable and testable code using Repository and Unit of Work patterns.",
+      "• Built dynamic front-end components with HTML, CSS, Bootstrap, and jQuery, integrating seamlessly with back-end logic.",
+      "• Developed RESTful APIs, ensuring smooth external communication and validating endpoints with Postman and Swagger.",
+      "• Implemented secure authentication and role-based access with ASP.NET Identity, managing roles and claims.",
+      "• Leveraged Git for version control, following Git Flow for streamlined collaboration and release management.",
+      "• Used Dependency Injection to improve modularity, reduce coupling, and enhance unit testability.",
+      "• Contributed to Agile Scrum teams, applying SDLC best practices for iterative software delivery.",
+      "• Utilized tools like Rider, Visual Studio, Docker, and Jenkins for CI/CD, development, and deployment automation.",
+
     ],
   },
   {
-    title: "System Support Specialist - Mackenzie Health",
-    company_name: "Mackenzie Health",
-    icon: mackenziehealth,
+    title: "Embedded Software Engineer-Intern",
+    company_name: "Valeo",
+    icon: Valeo,
     iconBg: "#fff",
-    date: "Jan. 2023 - Aug. 2023",
+    date: "July. 2022 - oct. 2023",
     points: [
-      "Overhauled 400+ Surface tablets to bedside iPads, deploying the in-house 'Get Well Soon' app with Intune to hospital systems.",
-      "Developed and refined an admin portal for managing app services, user roles, and subscription expirations.",
-      "Utilized Jamf Pro for MDM, securely deploying iPads/iPhones across clinical departments.",
-      "Implemented Vocera VOIP on iPhones, enabling real-time communication among nurses and ER staff.",
-      "Performed in-room checks, resolved device issues, and collaborated with vendors on bug logs and system updates.",
+      "• Developed and integrated C/C++ embedded software for automotive ECUs, focusing on AUTOSAR RTE, BSW, and MCAL layers.",
+      "• Using advanced C++ features (C++11 to 23) followed Agile/ Scrum methodologies techniques to ensure efficient multithreaded and scalable software systems.",
+      "• Debugged firmware using WinIDEA, CANoe Family, iSYSTEM Debugger, JTAG, CANoe, and Visual Studiowhile reporting defects to CoreALM & Jira.",
+      "• Applied knowledge of networking protocols such as CAN, I2C, UART, SPI, and Ethernet for communicationbetween embedded devices.",
+      "• Identified and interpreted network traffic using Wireshark to analyze protocols such as DHCP, DNS, and TCP/IP.",
+      "• Conducted functional and non-functional tests following the V-model SDLC, executing manual and automatedtest cases using Python & vTESTstudio, integrating them into CI/CD pipelines with Jenkins.",
+      "• Performed software validation, including execution time analysis (Oscilloscope), memory management (Flash,NVMs), bootloader testing, and CPU load optimization.",
+      "• Developed boot loader mechanisms for secure update and debugging of ECU firmware.",
+      "• Worked with Functional Safety Standards (ISO 26262) and ensured compliance with MISRA C coding guidelines.",
+      "• Experience in using IBM Rational DOORS for managing software requirements in automotive and embedded systems projects.",
     ],
   },
-  {
-    title: "Tech Sales Associate - Staples Canada",
-    company_name: "Staples Canada (Co-op)",
-    icon: staples,
-    iconBg: "#1294C8",
-    date: "Sep. 2020 - Feb. 2021",
-    points: [
-      "Provided specialized support for Windows, Mac, and Linux, performing on-site installations, repairs, and optimizations.",
-      "Streamlined inventory processes by handling SKUs and POs, maintaining a well-organized sales floor.",
-      "Maintained accurate sales and inventory data in IBM AS/400, improving workflows and operational efficiency.",
-      "Resolved complex technical inquiries, delivering tailored solutions that ensured high customer satisfaction.",
-      "Facilitated e-commerce transactions, merging in-store and online channels.",
-    ],
-  },
+
 ];
 
 
 const extracurricular = [
   {
-    title: "MongoDB Python Developer Path",
-    type: "Proof of Completion",
-    icon: mongodb,
+    title: "Google Project Management:",
+    type: " Professional Certificate",
+    icon: google,
     iconBg: "#000000",
-    date: "Feb 2025",
-    points: ["PyMongo, NoSQL Schema Design, Data Aggregation, MongoDB Query Optimization"],
-    credential: "https://learn.mongodb.com/c/tf2DSC7hTcyM3NBZjkLPoA",
+    date: "In Progress",
+    points: ["Project Management Strategy and Operations Leadership and Management Communication Business Communication"],
+    credential: "https://www.coursera.org/professional-certificates/google-project-management",
   },
   {
     title: "Github Foundations",
     type: "Professional Certificate",
     icon: github,
     iconBg: "#000000",
-    date: "Issued: Sep 2024 - Expires: Sep 2027",
+    date: "In Progress",
     points: ["Version Control, Git, Actions, CI/CD, Repository Management, SAP Workflow"],
-    credential: "https://www.credly.com/badges/b6f69785-2da8-447e-b02c-3350bf9af803",
+    credential: "https://education.github.com/experiences/foundations_certificate",
   },
+
   {
-    title: "Certified Enterprise Scripting Architect",
-    type: "Automate | Connectwise University",
-    icon: connectwise,
-    iconBg: "#748C7B",
-    date: "Jul 2024",
-    points: ["RMM, MDM, Powershell, Scripting, Windows Server, Enterprise Architecture, Query Optimization"],
-    credential: connectwisecert,
-  },
-  {
-    title: "Google IT Automation With Python",
+    title: "AWS Certified Cloud Practitioner",
     type: "Professional Certificate",
-    icon: google,
+    icon: amazon,
     iconBg: "#050C18",
-    date: "Mar 2023",
+    date: "In Progress",
     points: [
-      "Configuration Management, Automation, Google Cloud Platform (GCP), Cloud Servers and VM's, Version Control Tools, Automation.",
+      "Showcase foundational knowledge of AWS cloud services and cloud computing, Cloud Servers and VM's, Version Control Tools, Automation.",
     ],
-    credential: "https://www.coursera.org/account/accomplishments/specialization/certificate/82SZFUWF4B3T",
+    credential: "https://aws.amazon.com/certification/certified-cloud-practitioner/",
   },
-  {
-    title: "WHMIS (Worker Health and Safety)",
-    type: "Government Workforce Requirement",
-    icon: whmis,
-    iconBg: "#CCCFD8",
-    date: "Sep 2020",
-    points: ["Hazard Awareness, Legal Compliance, Personal Protection, Accident Prevention"],
-  },
+
 ];
 
 const projects = [
   {
-    name: "FinancialFlow 💸",
+    name: "Formula Racing 🏎️",
     description:
-      "Comprehensive personal finance management application built with Next.js and Typescript. It empowers users to take control of their financial health through intuitive tracking, insightful analytics, and personalized recommendations.",
+      "🏁 Formula - ASP.NET Core MVC Racing Events Platform Formula is a full-featured web application built with ASP.NET Core MVC. It enables administrators to manage racing events, cars, banners, and bookings with a sleek UI and rich media features. The client-facing interface offers an interactive experience for users, including image sliders, modals, and dynamic dropdowns.",
     tags: [
       {
-        name: "React-native",
+        name: "C# .net Core MVC",
         color: "blue-text-gradient",
       },
       {
-        name: "Typescript",
+        name: "Javascript/JQuery",
         color: "green-text-gradient",
       },
       {
-        name: "Tailwind CSS",
+        name: "Bootstrap CSS",
         color: "pink-text-gradient",
       },
       {
-        name: "Next.js",
+        name: "SQL Server",
         color: "blue-text-gradient",
       },
     ],
-    image: financialflowimage,
-    source_code_link: "https://github.com/sunnypatell/financialflow",
-    live_project_link: "https://financial-flow.vercel.app/",
+    image: formula,
+    source_code_link: "https://github.com/MarwanTarekZaky/FormulaRacing",
+    live_project_link: "https://github.com/MarwanTarekZaky/FormulaRacing",
   },
+ 
   {
-    name: "Sunnify (Spotify Downloader) ♫",
+    name: "Embedded Systems Projects in C++ 🌐",
     description:
-      "Sunnify is a Spotify downloader webapp/desktop application that allows you to download entire playlists locally onto your Mac/Linux/Windows PC. The web version of the app is hosted on AWS Lambda and Elastic Beanstalk, with FastAPI ASGI production.",
+      "Developed a custom memory pool allocator to optimize memory usage, a multi-threaded file compression tool for efficient data storage, and a real-time data processing system for low-latency sensor handling. Each project emphasizes performance, concurrency, and resource efficiency in embedded environments.",
     tags: [
       {
-        name: "python",
+        name: "C/C++ Embedded C",
         color: "blue-text-gradient",
       },
       {
-        name: "webscraping",
+        name: "AVR & ARM",
         color: "green-text-gradient",
       },
       {
-        name: "AWS Lambda/Beanstalk",
+        name: "CAN/UART/SPI/I2C",
         color: "pink-text-gradient",
       },
       {
-        name: "Proxy/API",
+        name: "Authentication/Flashing",
         color: "blue-text-gradient",
       },
     ],
-    image: sunnifyimage,
-    source_code_link: "https://github.com/sunnypatell/sunnify-spotify-downloader",
-    live_project_link: "https://sunnify-spotify-downloader.vercel.app/",
+    image: atmega,
+    source_code_link: "https://github.com/MarwanTarekZaky/cpp-projects/tree/main/embedded-projects",
+    live_project_link: "https://github.com/MarwanTarekZaky/cpp-projects/tree/main/embedded-projects",
   },
+  
+  
   {
-    name: "Enterprise API Tester 🌐",
+    name: "Valeo SCALA™ LiDAR 🐞🔎 👨🏻‍💻",
     description:
-      "Comprehensive API testing tool with support for all major HTTP methods, authentication, and CORS-friendly proxy. Features include request import/export, real-world samples, and local storage for data persistence. Built with Next.js, and TypeScript for optimal performance and developer experience.",
+      "Involved in developing and testing the Valeo SCALA™ LiDAR, a cutting-edge automotive sensor. This project focused on enhancing the sensor's performance and reliability through rigorous testing and validation processes. Collaborated with cross-functional teams to ensure seamless integration of the LiDAR system into vehicles, contributing to advancements in autonomous driving technology.",
     tags: [
       {
-        name: "Typescript",
+        name: "c++",
         color: "blue-text-gradient",
       },
       {
-        name: "Tailwind CSS",
+        name: "AUTOSAR",
         color: "green-text-gradient",
       },
       {
-        name: "Next.js",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Authentication-Body",
-        color: "blue-text-gradient",
-      },
-    ],
-    image: enterpriseapitester,
-    source_code_link: "https://github.com/sunnypatell/enterprise-api-request-tester",
-    live_project_link: "https://enterprise-api-request-tester.vercel.app/",
-  },
-  {
-    name: "KnifeThrow 🎯",
-    description:
-      "KnifeThrow is a Java Swing-based 2D mini-game, packed by maven with over 5000 lines of code. It includes a menu, game-over screens, sound effects, and custom sprites. Players unlock different knives with varied abilities in a dedicated knife shop. The game features improved collision systems, animations, and particle effects for an immersive experience.",
-    tags: [
-      {
-        name: "java",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "swing",
-        color: "green-text-gradient",
-      },
-      {
-        name: "maven",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "arcadegame",
-        color: "green-text-gradient",
-      },
-    ],
-    image: knifethrowimage,
-    source_code_link: "https://github.com/sunnypatell/KnifeThrow",
-    live_project_link: "https://github.com/sunnypatell/KnifeThrow",
-  },
-  {
-    name: "COVID-19 GTA Cases Data Analysis 🧪",
-    description:
-      "A deep dive into ongoing COVID-19 outbreaks in the Greater Toronto Area (GTA), Ontario. Using data from a government-licensed dataset called Outbreaks by Public Health Unit (PHU) to explore trends and patterns in these outbreaks. This data analysis integrates the essential aspects of the data science workflow (Filesize: 3.5 MiB, 62699 lines of raw dataset)",
-    tags: [
-      {
-        name: "python",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tensorflow",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scikit-learn",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "pandas",
-        color: "green-text-gradient",
-      },
-      {
-        name: "matplotlib",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "numpy",
-        color: "blue-text-gradient",
-      },
-    ],
-    image: pythonanalysis,
-    source_code_link: "https://drive.google.com/drive/folders/1cTbp-6-flypV-kj3-q606UwwWEralu11",
-    live_project_link: "https://drive.google.com/drive/folders/1cTbp-6-flypV-kj3-q606UwwWEralu11",
-  },
-  {
-    name: "Secure Password Generator 🔐",
-    description:
-      "Secure Password Generator is a Java-based tool designed to generate and manage secure passwords, prioritizing simplicity, security, and user-friendliness. It employs industry-standard encryption algorithms to create strong, unique passwords resistant to common hacking attempts.",
-    tags: [
-      {
-        name: "java",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "sha-256",
-        color: "green-text-gradient",
-      },
-      {
-        name: "encryption/decryption",
+        name: "Embedded systems",
         color: "pink-text-gradient",
       },
       {
@@ -508,16 +352,16 @@ const projects = [
         color: "blue-text-gradient",
       },
     ],
-    image: password_generator,
-    source_code_link: "https://github.com/sunnypatell/SecurePasswordGenerator",
-    live_project_link: "https://github.com/sunnypatell/SecurePasswordGenerator",
+    image: scala3,
+    source_code_link: "hhttps://www.valeo.com/en/valeo-scala-lidar/",
+    live_project_link: "https://www.valeo.com/en/valeo-scala-lidar/",
   },
 ];
 
 const testimonials = [
   {
     testimonial:
-      "I highly recommend Sunny for his outstanding technical proficiency and professional approach as a System Support specialist at Mackenzie Hospital. His deep knowledge of iPad systems and troubleshooting abilities were instrumental in ensuring seamless operations and user satisfaction. Sunny's proactive attitude and problem-solving skills made him a reliable asset to our team, and he consistently exceeded expectations in resolving complex issues. I have no hesitation in endorsing him for any tech-related position, as I am confident he will excel in any challenge he takes on.",
+      "I highly recommend Marwan for his outstanding technical proficiency and professional approach as a System Support specialist at Mackenzie Hospital. His deep knowledge of iPad systems and troubleshooting abilities were instrumental in ensuring seamless operations and user satisfaction. Sunny's proactive attitude and problem-solving skills made him a reliable asset to our team, and he consistently exceeded expectations in resolving complex issues. I have no hesitation in endorsing him for any tech-related position, as I am confident he will excel in any challenge he takes on.",
     name: "Feda Abukhadrah, BIT | SaaS | Health Tech | MDM | ABM | POS | ITIL®V4 | CompTIA A+",
     designation: "Senior Service Desk Specialist",
     company: "Px Solutions LTD.",
@@ -525,7 +369,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "Sunny Patel's expertise in the technological domain is truly remarkable. Proficient in programming languages like Java, Python, and C++, and highly skilled in Microsoft's suite of tools, Sunny's grasp of networking concepts is extensive. What sets him apart is his experience in handling over 1000 devices remotely and on-site, along with a successful track record in troubleshooting and deploying various software and hardware upgrades. His dedication to tackling complex challenges, grounded in a strong foundation in software design and a rich academic background in computer science, positions Sunny as a valuable asset to any tech-driven team.",
+      "Marwan Patel's expertise in the technological domain is truly remarkable. Proficient in programming languages like Java, Python, and C++, and highly skilled in Microsoft's suite of tools, Marwan's grasp of networking concepts is extensive. What sets him apart is his experience in handling over 1000 devices remotely and on-site, along with a successful track record in troubleshooting and deploying various software and hardware upgrades. His dedication to tackling complex challenges, grounded in a strong foundation in software design and a rich academic background in computer science, positions Sunny as a valuable asset to any tech-driven team.",
     name: "Sanjay Sharma, MBA, CISSP, CISA, PMP®",
     designation: "Senior Vice-President and Head of Cybersecurity Services",
     company: "Pathway Communications / ex-Toronto Hydro",
@@ -533,7 +377,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "Sunny's proficiency in data entry was impeccable, displaying meticulous attention to detail and accuracy. His commitment to maintaining organized and error-free records significantly improved our operational efficiency. In customer service, Sunny's phone etiquette was truly commendable. He communicated with a warm and professional demeanour, leaving customers with a positive impression and ensuring their needs were met. His ability to multitask and handle multiple customers simultaneously was impressive, showcasing his excellent time management and interpersonal skills. Sunny's dedication to his role and adeptness in data entry, customer service, and managing simultaneous customer interactions made him a valuable asset to our team at Lazer Runner.",
+      "Marwan's proficiency in Embedded Systems was impeccable, displaying meticulous attention to detail and accuracy. His commitment to maintaining organized and error-free records significantly improved our operational efficiency. In customer service, Marwan's phone etiquette was truly commendable. He communicated with a warm and professional demeanour, leaving customers with a positive impression and ensuring their needs were met. His ability to multitask and handle multiple customers simultaneously was impressive, showcasing his excellent time management and interpersonal skills. Sunny's dedication to his role and adeptness in data entry, customer service, and managing simultaneous customer interactions made him a valuable asset to our team at Lazer Runner.",
     name: "Michelle Ilizirov",
     designation: "Manager",
     company: "Lazer Runner",

@@ -8,6 +8,13 @@ import fullstack from "./creator.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import scala3 from "./scala3.jpg";
+import atmega from "./atmega.jpeg";
+import formula from "./formula.png";
+import amazon from "./amazon.png";
+import helwan from "./helwan.png";
+import Valeo from "./Valeo.png";
+import sparksystems from "./sparksystems.jpeg";
 
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -65,7 +72,7 @@ import wordsearch from "./wordsearchoutput.jpg"
 import financialflowimage from "./FinancialFlowDemonstration.png"
 import enterpriseapitester from "./enterpriseapiui.png"
 
-import resume from "./Resume-Sunny-Patel.pdf";
+import resume from "./MarwanResume.pdf";
 import awsdbcert from "./AWS Database Specialty Certified - Sunny Jayendra Patel.jpg"
 import connectwisecert from "./Connectwise-Scripting-Certification.pdf"
 
@@ -74,6 +81,13 @@ export {
   backend,
   mobile,
   web,
+  scala3,
+  atmega,
+  formula,
+  amazon,
+  helwan,
+  Valeo,
+  sparksystems,
   fullstack,
   github,
   menu,
