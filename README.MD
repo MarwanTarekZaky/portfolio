@@ -9,7 +9,7 @@ The 3D Portfolio is a modern and interactive web application built with React.js
 
 ## Live Demo 💻
 
-Explore the live demonstration of the project at [www.MarwanZaky.net](www.MarwanZaky.net)!
+Explore the live demonstration of the project at [https://portfolio-marwantarekzakys-projects.vercel.app/](https://portfolio-marwantarekzakys-projects.vercel.app/)!
 
 ## Usage 🛠️
 
@@ -25,7 +25,7 @@ Feel free to explore the codebase and use it as a reference for building your ow
 
 ## Deployment 🌐
 
-This project is deployed on Vercel using Next.js. It dynamically hides environment variables, such as emailJS configuration, to ensure security. You can access the deployed project at [www.MarwanZaky.net](www.MarwanZaky.net).
+This project is deployed on Vercel using Next.js. It dynamically hides environment variables, such as emailJS configuration, to ensure security. You can access the deployed project at [https://portfolio-marwantarekzakys-projects.vercel.app/](https://portfolio-marwantarekzakys-projects.vercel.app/).
 
 ## Built with Vite 🚀
 

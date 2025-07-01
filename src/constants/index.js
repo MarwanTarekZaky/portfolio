@@ -57,6 +57,7 @@ import {
   helwan,
   Valeo,
   sparksystems,
+  alstom,
 } from "../assets";
 
 export const navLinks = [
@@ -117,7 +118,7 @@ const education = [
     iconBg: "#fff",
     date: "2019 - 2023",
     points: [
-      "Grade: Very Good, GP: Excellent",
+      "Grade: Very Good with honors, GP: Excellent",
       "Introduction to Computer Science, Data Structures and Algorithms, Systems Programming, Computer Architecture, Operating Systems, Databases, Computer Networks, Software Engineering, Artificial Intelligence, Machine Learning, Theory of Computation, Programming Languages, Compilers, Cybersecurity, Web Development, Human-Computer Interaction.",
     ],
   },
@@ -139,10 +140,6 @@ const technologies = [
     {
     name: "Powershell",
     icon: powershell,
-  },
-  {
-    name: "Kali Linux",
-    icon: kalilinux,
   },
   {
     name: "MongoDB",
@@ -183,10 +180,6 @@ const itTools = [
 
 const cybersecurityTools = [
   {
-    name: "Kali Linux",
-    icon: kalilinux,
-  },
-  {
     name: "Wireshark",
     icon: wireshark,
   },
@@ -198,11 +191,26 @@ const designTools = [
 
 const experiences = [
   {
+    title: "Application Engineer Integrated Control Center (ICC) ",
+    company_name: "Alstom",
+    icon: alstom,
+    iconBg: "#fff",
+    date: "July. 2025 - Present",
+    points: [
+      " Developed and integrated software modules for SCADA and ATS subsystems using C# and scripting languages (VBS, SQL).",
+      " Designed and optimized SQL Server and PostgreSQL schemas, writing complex LINQ queries for scalability and query performance.",
+      " Designed and validated ICC application data for real-time railway control systems with a strong focus on quality and configuration management.",
+      " Supported HMI (Human Machine Interface) development, including graphics and backend integration, using Windows Server environments.",
+      " Collaborated in system testing (integration, V&V) and deployment, applying version control and traceability in line with agile processes.",
+      " Ensured seamless integration with PLCs, RTUs, and industrial protocols (OPC-UA, Modbus) across teams.",
+    ],
+  },
+  {
     title: "Web Backend Developer .net",
     company_name: "spark systems",
     icon: sparksystems,
     iconBg: "#fff",
-    date: "Jan. 2025 - Present",
+    date: "Jan. 2025 - June. 2025",
     points: [
       " Developed and maintained scalable back-end applications with ASP.NET Core MVC, C#, Razor Pages, and Entity Framework Core, ensuring efficient data management and database interactions.",
       " Designed and optimized SQL Server and PostgreSQL schemas, writing complex LINQ queries for scalability and query performance.",

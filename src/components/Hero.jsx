@@ -70,10 +70,9 @@ const WavingHand = () => {
 
 const Hero = () => {
   const typedItems = [
-    "Software Developer",
+    "Software Engineer",
+    "Application Desginer",
     "Embedded Systems Engineer",
-    "Web Developer",
-    "Team Leader"
   ];
 
   return (

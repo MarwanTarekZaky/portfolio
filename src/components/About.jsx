@@ -108,7 +108,7 @@ const About = () => {
               style={{ boxShadow: "0px 5px 0px 0px rgba(0,0,0,0.6)", transition: "all ease 0.1s" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open("https://www.linkedin.com/in/marwan-tarek-566a32231/", "_blank")}
+              onClick={() => window.open("https://www.linkedin.com/in/marwan-tarek-zaky/", "_blank")}
             >
               <span className="font-semibold">LinkedIn</span>
             </motion.button>
@@ -136,7 +136,7 @@ const About = () => {
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.1, 0.75)}>
               <span className="mr-4 text-2xl flex-shrink-0">👨‍💻</span>
               <span>
-                I&apos;m a Software Engineer with over 2 years of experience in Web & Embedded software development.
+                I&apos;m a Software Engineer with more than 2 years of experience in Software development.
               </span>
             </motion.li>
             <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.2, 0.75)}>

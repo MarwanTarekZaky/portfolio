@@ -15,6 +15,7 @@ import amazon from "./amazon.png";
 import helwan from "./helwan.png";
 import Valeo from "./Valeo.png";
 import sparksystems from "./sparksystems.jpeg";
+import alstom from "./alstom.jpeg";
 
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -88,6 +89,7 @@ export {
   helwan,
   Valeo,
   sparksystems,
+  alstom,
   fullstack,
   github,
   menu,
