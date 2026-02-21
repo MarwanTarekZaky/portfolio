@@ -6,57 +6,95 @@ import { textVariant } from "../utils/motion";
 
 // Import all assets
 import {
-  python,
-  javascript,
-  CSharp,
-  cplusplus,
-  typescript,
-  docker,
-  tailwind,
-  C,
-  postgresql,
-  mongodb,
-  DotNet,
-  aws,
-  ubuntu,
-  powershell,
-  azure,
-  VTest,
-  rider,
-  virtualbox,
-  kalilinux,
-  wireshark,
-  Qt,
-  iSystem,
-  photoshop,
-  premiere,
-  cinema4d,
+  // Programming
+  CSharp, cplusplus, C, python, typescript, javascript,
+  DotNet, aspnet, entityframework, react,
+  postgresql, mongodb, sqlserver, mysql, redis, tailwind,
+  // Tools
+  azure, aws, docker, kubernetes,
+  git, github, gitlab, jenkins,
+  postman, swagger, robotframework,
+  kafka, artemis,
+  ubuntu, powershell, vmware, virtualbox, kalilinux, wireshark,
+  Qt, rider,
+  stm32, freertos, zephyr, VTest, iSystem, canoe, canalyzer, davinci,
+  cmake, make, ninja, gdb, valgrind,
 } from "../assets";
 
+// Languages & Frameworks (things you actively code in)
 const programming = [
-  { name: "Python", icon: python },
-  { name: "CSharp", icon: CSharp },
+  { name: "C#", icon: CSharp },
   { name: "C++", icon: cplusplus },
-  { name: "JavaScript", icon: javascript },
-  { name: "Docker", icon: docker },
   { name: "C", icon: C },
+  { name: "Python", icon: python },
+  { name: "TypeScript", icon: typescript },
+  { name: "JavaScript", icon: javascript },
+
+  { name: ".NET", icon: DotNet },
+  { name: "ASP.NET Core", icon: aspnet },
+  { name: "Entity Framework", icon: entityframework },
+  { name: "React", icon: react },
+
   { name: "PostgreSQL", icon: postgresql },
   { name: "MongoDB", icon: mongodb },
-  { name: "DotNet", icon: DotNet },
+  { name: "SQL Server", icon: sqlserver },
+  { name: "MySQL", icon: mysql },
+  { name: "Redis", icon: redis },
+
+  { name: "Tailwind CSS", icon: tailwind },
 ];
 
+// Infrastructure / DevOps / Validation / Embedded tooling
 const itTools = [
-  { name: "AWS", icon: aws },
+  // Cloud & Containers
+  { name: "Microsoft Azure", icon: azure },
+  { name: "Amazon Web Services (AWS)", icon: aws },
+  { name: "Docker", icon: docker },
+  { name: "Kubernetes", icon: kubernetes },
+
+  // CI/CD & Collaboration
+  { name: "Git", icon: git },
+  { name: "GitHub", icon: github },
+  { name: "GitLab CI", icon: gitlab },
+  { name: "Jenkins", icon: jenkins },
+
+  // APIs & Testing
+  { name: "Postman", icon: postman },
+  { name: "OpenAPI / Swagger", icon: swagger },
+  { name: "Robot Framework", icon: robotframework },
+
+  // Messaging / Platform
+  { name: "Apache Kafka", icon: kafka },
+  { name: "ActiveMQ Artemis", icon: artemis },
+
+  // OS / Hypervisors / Networking
   { name: "Ubuntu", icon: ubuntu },
   { name: "PowerShell", icon: powershell },
-  { name: "Azure", icon: azure },
-  { name: "VTest", icon: VTest },
-  { name: "rider", icon: rider },
+  { name: "VMware", icon: vmware },
   { name: "VirtualBox", icon: virtualbox },
   { name: "Kali Linux", icon: kalilinux },
   { name: "Wireshark", icon: wireshark },
+
+  // UI/Frameworks (tools you use, not “languages”)
   { name: "Qt", icon: Qt },
-  { name: "iSystem", icon: iSystem },
+  { name: "Rider", icon: rider },
+
+  // Embedded / Validation
+  { name: "STM32", icon: stm32 },
+  { name: "FreeRTOS", icon: freertos },
+  { name: "Zephyr RTOS", icon: zephyr },
+  { name: "vTESTstudio", icon: VTest },
+  { name: "iSYSTEM (winIDEA)", icon: iSystem },
+  { name: "Vector CANoe", icon: canoe },
+  { name: "Vector CANalyzer", icon: canalyzer },
+  { name: "DaVinci Configurator", icon: davinci },
+
+  // Build & Debug
+  { name: "CMake", icon: cmake },
+  { name: "Make", icon: make },
+  { name: "Ninja", icon: ninja },
+  { name: "GDB", icon: gdb },
+  { name: "Valgrind", icon: valgrind },
 ];
 
 const contentProduction = [

@@ -95,7 +95,10 @@ const About = () => {
           <div className="mt-10 flex flex-wrap gap-5 justify-center">
             <motion.button
               className="px-6 py-3 text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-md shadow-md hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transform transition duration-500 ease-in-out hover:scale-105 active:translate-y-1 active:shadow-none no-select"
-              style={{ boxShadow: "0px 5px 0px 0px rgba(0,0,0,0.6)", transition: "all ease 0.1s" }}
+              style={{
+                boxShadow: "0px 5px 0px 0px rgba(0,0,0,0.6)",
+                transition: "all ease 0.1s",
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.open(resume, "_blank")}
@@ -105,20 +108,33 @@ const About = () => {
 
             <motion.button
               className="px-6 py-3 text-white bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-md hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transform transition duration-500 ease-in-out hover:scale-105 active:translate-y-1 active:shadow-none no-select"
-              style={{ boxShadow: "0px 5px 0px 0px rgba(0,0,0,0.6)", transition: "all ease 0.1s" }}
+              style={{
+                boxShadow: "0px 5px 0px 0px rgba(0,0,0,0.6)",
+                transition: "all ease 0.1s",
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open("https://www.linkedin.com/in/marwan-tarek-zaky/", "_blank")}
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/marwan-tarek-zaky/",
+                  "_blank",
+                )
+              }
             >
               <span className="font-semibold">LinkedIn</span>
             </motion.button>
 
             <motion.button
               className="px-6 py-3 text-white bg-gradient-to-r from-gray-600 to-gray-800 rounded-md shadow-md hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50 transform transition duration-500 ease-in-out hover:scale-105 active:translate-y-1 active:shadow-none no-select"
-              style={{ boxShadow: "0px 5px 0px 0px rgba(0,0,0,0.6)", transition: "all ease 0.1s" }}
+              style={{
+                boxShadow: "0px 5px 0px 0px rgba(0,0,0,0.6)",
+                transition: "all ease 0.1s",
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open("https://github.com/MarwanTarekZaky", "_blank")}
+              onClick={() =>
+                window.open("https://github.com/MarwanTarekZaky", "_blank")
+              }
             >
               <span className="font-semibold">GitHub</span>
             </motion.button>
@@ -133,34 +149,73 @@ const About = () => {
             variants={fadeIn("", "", 0.1, 1)}
             className="mt-4 text-secondary text-[17px] max-w-3xl space-y-6 list-none"
           >
-            <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.1, 0.75)}>
-              <span className="mr-4 text-2xl flex-shrink-0">👨‍💻</span>
+            <motion.li
+              className="flex items-start"
+              variants={fadeIn("up", "spring", 0.1, 0.75)}
+            >
+              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
+                👨‍💻
+              </span>
               <span>
-                I&apos;m a Software Engineer with more than 2 years of experience in Software development.
+                I’m a Software & Systems Engineer with 2+ years of hands‑on
+                experience across embedded, backend, and validation—focusing on
+                reliable, production‑grade systems.
               </span>
             </motion.li>
-            <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.2, 0.75)}>
-              <span className="mr-4 text-2xl flex-shrink-0">🎓</span>
+
+            <motion.li
+              className="flex items-start"
+              variants={fadeIn("up", "spring", 0.2, 0.75)}
+            >
+              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
+                🎓
+              </span>
               <span>
-               Got my Bachelor of Science's degree with honors in Computer Science at Helwan University, I&apos;m all about building reliable, scalable software that makes a difference.
+                B.Sc. in Computer Science (Honours), Helwan University. I care
+                about correctness, scalability, and clean, maintainable design.
               </span>
             </motion.li>
-            <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.3, 0.75)}>
-              <span className="mr-4 text-2xl flex-shrink-0">🛠</span>
+
+            <motion.li
+              className="flex items-start"
+              variants={fadeIn("up", "spring", 0.3, 0.75)}
+            >
+              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
+                🛠
+              </span>
               <span>
-                From full-stack development to Embedded systems , I&apos;ve led involved in enterprise-level projects that streamline operations and deliver real impact.
+                Work spans modern C/C++ for embedded (drivers, bootloaders,
+                RTOS, UDS) and platform/backend engineering with .NET Core, EF,
+                and React‑based tooling—shipped in Agile teams.
               </span>
             </motion.li>
-            <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.4, 0.75)}>
-              <span className="mr-4 text-2xl flex-shrink-0">🔧</span>
+
+            <motion.li
+              className="flex items-start"
+              variants={fadeIn("up", "spring", 0.4, 0.75)}
+            >
+              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
+                🔧
+              </span>
               <span>
-                I enjoy automating workflows, optimizing systems, and turning complex challenges into real results. 📈
+                I automate benches and workflows with Python/Robot Framework and
+                wire systems together with secure REST APIs, CI/CD
+                (GitLab/Jenkins), and messaging (Kafka/ActiveMQ)—deployed on
+                Azure with Docker/Kubernetes.
               </span>
             </motion.li>
-            <motion.li className="flex items-start" variants={fadeIn("up", "spring", 0.5, 0.75)}>
-              <span className="mr-4 text-2xl flex-shrink-0">💡</span>
+
+            <motion.li
+              className="flex items-start"
+              variants={fadeIn("up", "spring", 0.5, 0.75)}
+            >
+              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
+                💡
+              </span>
               <span>
-                I&apos;m always curious and constantly learning.
+                Always learning—pushing deeper into systems performance, testing
+                discipline, and practical AI/ML where it accelerates diagnostics
+                and analysis.
               </span>
             </motion.li>
           </motion.ul>

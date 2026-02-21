@@ -1,3 +1,4 @@
+// Import all assets
 import {
   mobile,
   backend,
@@ -21,6 +22,10 @@ import {
   google,
   whmis,
   aws,
+  // ➕ used in Skills/Certs/Projects
+  azure,
+  docker,
+  DotNet,
   python,
   cplusplus,
   typescript,
@@ -58,311 +63,359 @@ import {
   Valeo,
   sparksystems,
   alstom,
+  rootcauseanalysis,
 } from "../assets";
 
 export const navLinks = [
-  {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "education",
-    title: "Education",
-  },
-  {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "extracurricular",
-    title: "Certifications",
-  },
-  {
-    id: "skills",
-    title: "Skills",
-  },
-  {
-    id: "projects",
-    title: "Projects",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
+  { id: "about", title: "About" },
+  { id: "education", title: "Education" },
+  { id: "work", title: "Work" },
+  { id: "extracurricular", title: "Certifications" },
+  { id: "skills", title: "Skills" },
+  { id: "projects", title: "Projects" },
+  { id: "contact", title: "Contact" },
 ];
 
 const services = [
-  {
-    title: "Software Developer",
-    icon: fullstack,
-  },
-  {
-    title: "Systems Infrastructure",
-    icon: backend,
-  },
-  {
-    title: "Cloud Automation",
-    icon: mobile,
-  },
-  {
-    title: "Workflows",
-    icon: web,
-  },
+  { title: "Software Developer", icon: fullstack },
+  { title: "Systems Infrastructure", icon: backend },
+  { title: "Cloud Automation", icon: mobile },
+  { title: "Workflows", icon: web },
 ];
 
 const education = [
   {
-    title: "Computer Science (H. BSc)",
+    title: "B.Sc. in Computer Science (Honours)",
     company_name: "Helwan University, Cairo, Egypt",
     icon: helwan,
     iconBg: "#fff",
-    date: "2019 - 2023",
+    date: "Sep 2019 – Jul 2023",
     points: [
-      "Grade: Very Good with honors, GP: Excellent",
-      "Introduction to Computer Science, Data Structures and Algorithms, Systems Programming, Computer Architecture, Operating Systems, Databases, Computer Networks, Software Engineering, Artificial Intelligence, Machine Learning, Theory of Computation, Programming Languages, Compilers, Cybersecurity, Web Development, Human-Computer Interaction.",
+      "Graduated with Very Good (Honours); Graduation Project grade: Excellent.",
+      "Core coursework: Algorithms & Data Structures, Operating Systems, Computer Architecture, Databases, Computer Networks, Software Engineering, AI & Machine Learning, Theory of Computation, Programming Languages, Compilers, Cybersecurity, Web Development, and HCI.",
+      "Led the graduation (capstone) project team to successful completion—coordinating planning, implementation, and documentation.",
+      "Gained hands‑on experience through lab‑intensive systems programming (C/C++), database design (SQL), and practical software engineering practices.",
     ],
   },
 ];
 
+// Languages & Frameworks
 const technologies = [
-  {
-    name: "CSharp",
-    icon: CSharp,
-  },
-  {
-    name: "Python",
-    icon: python,
-  },
-  {
-    name: "C++",
-    icon: cplusplus,
-  },
-    {
-    name: "Powershell",
-    icon: powershell,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "PostGreSQL",
-    icon: postgresql,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-    {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  }, 
-  {
-    name: "AWS",
-    icon: aws,
-  },
+  { name: "C#", icon: CSharp },
+  { name: "C++", icon: cplusplus },
+  { name: "C", icon: C },
+  { name: "Python", icon: python },
+  { name: "TypeScript", icon: typescript },
+  { name: "JavaScript", icon: javascript },
+  { name: ".NET", icon: DotNet },
+  { name: "HTML5", icon: html },
+  { name: "Tailwind CSS", icon: tailwind },
+  { name: "PostgreSQL", icon: postgresql },
+  { name: "MongoDB", icon: mongodb },
 ];
 
+// Infrastructure, Tools, IDEs, Platforms
 const itTools = [
-  {
-    name: "Powershell",
-    icon: powershell,
-  },
-  {
-    name: "VirtualBox",
-    icon: virtualbox,
-  },
+  { name: "Docker", icon: docker },
+  { name: "Microsoft Azure", icon: azure },
+  { name: "Amazon Web Services (AWS)", icon: aws },
+  { name: "Ubuntu", icon: ubuntu },
+  { name: "PowerShell", icon: powershell },
+  { name: "Git", icon: git },
+  { name: "GitHub", icon: github },
+  { name: "Rider", icon: rider },
+  { name: "Qt", icon: Qt },
+  { name: "vTESTstudio", icon: VTest },
+  { name: "iSYSTEM (winIDEA)", icon: iSystem },
+  { name: "VirtualBox", icon: virtualbox },
 ];
 
+// Security / Networking tooling
 const cybersecurityTools = [
-  {
-    name: "Wireshark",
-    icon: wireshark,
-  },
+  { name: "Kali Linux", icon: kalilinux },
+  { name: "Wireshark", icon: wireshark },
+  { name: "Metasploit", icon: metasploit },
+  { name: "Hydra", icon: hydra },
+  { name: "Aircrack-ng", icon: aircrackng },
 ];
 
+// Design / Media
 const designTools = [
-
+  { name: "Adobe Photoshop", icon: photoshop },
+  { name: "Adobe Premiere Pro", icon: premiere },
+  { name: "Cinema 4D", icon: cinema4d },
+  { name: "Blender", icon: blender },
 ];
 
 const experiences = [
   {
-    title: "Application Engineer Integrated Control Center (ICC) ",
+    title: "Software Engineer — Embedded Tools & Validation",
     company_name: "Alstom",
     icon: alstom,
     iconBg: "#fff",
-    date: "July. 2025 - Present",
+    date: "Jul 2025 – Present",
     points: [
-      " Developed and integrated software modules for SCADA and ATS subsystems using C# and scripting languages (VBS, SQL).",
-      " Designed and optimized SQL Server and PostgreSQL schemas, writing complex LINQ queries for scalability and query performance.",
-      " Designed and validated ICC application data for real-time railway control systems with a strong focus on quality and configuration management.",
-      " Supported HMI (Human Machine Interface) development, including graphics and backend integration, using Windows Server environments.",
-      " Collaborated in system testing (integration, V&V) and deployment, applying version control and traceability in line with agile processes.",
-      " Ensured seamless integration with PLCs, RTUs, and industrial protocols (OPC-UA, Modbus) across teams.",
+      "Delivered the main validation/diagnostics application in modern C++ (C++17/20); automated benches with Python/Tcl/Perl.",
+      "Built Robot Framework suites and integrated logs/artifacts into CI (GitLab CI, Jenkins), raising regression coverage by ~30%.",
+      "Designed AI/ML services for anomaly classification and an internal LLM + RAG knowledge base (FAISS/Milvus) over specs/incidents/test logs to speed up root‑cause analysis.",
+      "Exposed internal REST endpoints (OpenAPI/Swagger) with TLS and role‑based access control; validated endpoints with Postman.",
+      "Streamed diagnostics and events using Kafka and ActiveMQ Artemis; instrumented runs and centralized artifacts for traceability.",
+      "Containerized workers with Docker and orchestrated at scale on Kubernetes; ran workloads on Azure VMs and maintained VMware images.",
+      "Used Wireshark to debug bench services and protocols (DHCP/DNS/TCP/IP); enforced disciplined reviews and safety‑aware workflows.",
     ],
   },
   {
-    title: "Web Backend Developer .net",
-    company_name: "spark systems",
+    title: "Software Engineer (.NET) — Internal Tools & APIs",
+    company_name: "Spark Systems",
     icon: sparksystems,
     iconBg: "#fff",
-    date: "Jan. 2025 - June. 2025",
+    date: "Jan 2025 – Jun 2025",
     points: [
-      " Developed and maintained scalable back-end applications with ASP.NET Core MVC, C#, Razor Pages, and Entity Framework Core, ensuring efficient data management and database interactions.",
-      " Designed and optimized SQL Server and PostgreSQL schemas, writing complex LINQ queries for scalability and query performance.",
-      " Applied SOLID principles and Clean Architecture, creating maintainable and testable code using Repository and Unit of Work patterns.",
-      " Built dynamic front-end components with HTML, CSS, Bootstrap, and jQuery, integrating seamlessly with back-end logic.",
-      " Developed RESTful APIs, ensuring smooth external communication and validating endpoints with Postman and Swagger.",
-      " Implemented secure authentication and role-based access with ASP.NET Identity, managing roles and claims.",
-      " Leveraged Git for version control, following Git Flow for streamlined collaboration and release management.",
-      " Used Dependency Injection to improve modularity, reduce coupling, and enhance unit testability.",
-      " Contributed to Agile Scrum teams, applying SDLC best practices for iterative software delivery.",
-      " Utilized tools like Rider, Visual Studio, Docker, and Jenkins for CI/CD, development, and deployment automation.",
-
+      "Built backend services with ASP.NET Core (MVC) and Entity Framework in Onion/Clean architecture; introduced CI checks and Agile/Scrum rituals.",
+      "Optimized SQL queries and database schemas; implemented role‑based authentication/authorization and claims.",
+      "Developed React‑based tooling UIs and integrated them with secure REST APIs; documented endpoints with OpenAPI/Swagger and tested via Postman.",
+      "Added persistence adapters for PostgreSQL and caching with Redis; improved performance and reliability under load.",
+      "Followed Git Flow and code reviews; improved modularity and testability with dependency injection and repository patterns.",
+      "Used Rider/Visual Studio locally and Docker/Jenkins in CI/CD for build, test, and deployment automation.",
     ],
   },
   {
-    title: "Embedded Software Engineer-Intern",
+    title: "Embedded Software Engineer — Intern",
     company_name: "Valeo",
     icon: Valeo,
     iconBg: "#fff",
-    date: "July. 2022 - oct. 2023",
+    date: "Jul 2022 – Oct 2023",
     points: [
-      " Developed and integrated C/C++ embedded software for automotive ECUs, focusing on AUTOSAR RTE, BSW, and MCAL layers.",
-      " Using advanced C++ features (C++11 to 23) followed Agile/ Scrum methodologies techniques to ensure efficient multithreaded and scalable software systems.",
-      " Debugged firmware using WinIDEA, CANoe Family, iSYSTEM Debugger, JTAG, CANoe, and Visual Studiowhile reporting defects to CoreALM & Jira.",
-      " Applied knowledge of networking protocols such as CAN, I2C, UART, SPI, and Ethernet for communicationbetween embedded devices.",
-      " Identified and interpreted network traffic using Wireshark to analyze protocols such as DHCP, DNS, and TCP/IP.",
-      " Conducted functional and non-functional tests following the V-model SDLC, executing manual and automatedtest cases using Python & vTESTstudio, integrating them into CI/CD pipelines with Jenkins.",
-      " Performed software validation, including execution time analysis (Oscilloscope), memory management (Flash,NVMs), bootloader testing, and CPU load optimization.",
-      " Developed boot loader mechanisms for secure update and debugging of ECU firmware.",
-      " Worked with Functional Safety Standards (ISO 26262) and ensured compliance with MISRA C coding guidelines.",
-      " Experience in using IBM Rational DOORS for managing software requirements in automotive and embedded systems projects.",
+      "Contributed to BMW ADAS components integrating LiDAR and camera sensors; developed C/C++ drivers (RTOS/HAL; CAN/SPI/I2C/UART).",
+      "Validated bootloaders and UDS flashing; performed execution‑time analysis (oscilloscope), memory management (Flash/NVM), and CPU‑load optimization.",
+      "Executed SiL/HiL integration tests using winIDEA/iSYSTEM, JTAG/SWD, and Vector CANoe/CANalyzer; authored vTESTstudio cases linked to DOORS.",
+      "Configured AUTOSAR with Vector DaVinci Configurator; adhered to MISRA C, V‑Model, and safety/process requirements (ASPICE, ISO 26262).",
+      "Diagnosed networking with Wireshark and bench tools; collaborated across teams to ensure reliable ECU integration and releases.",
     ],
   },
-
 ];
 
-
 const extracurricular = [
+  // ── Project / PM & Dev Foundations
   {
-    title: "Google Project Management:",
-    type: " Professional Certificate",
+    title: "Google Project Management (Professional Certificate)",
+    type: "Professional Certificate",
     icon: google,
     iconBg: "#000000",
     date: "In Progress",
-    points: ["Project Management Strategy and Operations Leadership and Management Communication Business Communication"],
+    points: [
+      "Plan and execute projects with timelines, scope, risk, and stakeholder management.",
+      "Improve collaboration through structured communication and Agile/Scrum practices.",
+    ],
     credential: "https://www.coursera.org/professional-certificates/google-project-management",
   },
   {
-    title: "Github Foundations",
+    title: "GitHub Foundations",
     type: "Professional Certificate",
     icon: github,
     iconBg: "#000000",
     date: "In Progress",
-    points: ["Version Control, Git, Actions, CI/CD, Repository Management, SAP Workflow"],
+    points: [
+      "Version control workflows with Git and GitHub.",
+      "Intro to Actions (CI/CD), issues/projects, and repository governance.",
+    ],
     credential: "https://education.github.com/experiences/foundations_certificate",
   },
 
+  // ── Cloud: AWS
   {
-    title: "AWS Certified Cloud Practitioner",
-    type: "Professional Certificate",
+    title: "AWS Certified Cloud Practitioner (CLF‑C02)",
+    type: "Certification",
     icon: amazon,
     iconBg: "#050C18",
     date: "In Progress",
-    points: [
-      "Showcase foundational knowledge of AWS cloud services and cloud computing, Cloud Servers and VM's, Version Control Tools, Automation.",
-    ],
+    points: ["Cloud concepts, security and compliance, pricing, and core AWS services."],
     credential: "https://aws.amazon.com/certification/certified-cloud-practitioner/",
   },
+  {
+    title: "AWS Certified Developer — Associate (DVA‑C02)",
+    type: "Certification",
+    icon: amazon,
+    iconBg: "#050C18",
+    date: "In Progress",
+    points: ["Build and deploy serverless and containerized apps; IAM, SDKs, CI/CD, monitoring."],
+    credential: "https://aws.amazon.com/certification/certified-developer-associate/",
+  },
 
+  // ── Cloud: Microsoft Azure
+  {
+    title: "Microsoft Certified: Azure Fundamentals (AZ‑900)",
+    type: "Certification",
+    icon: azure,
+    iconBg: "#0078D4",
+    date: "In Progress",
+    points: ["Cloud fundamentals, Azure services, governance, and cost management."],
+    credential: "https://learn.microsoft.com/certifications/azure-fundamentals/",
+  },
+  {
+    title: "Microsoft Certified: Azure AI Fundamentals (AI‑900)",
+    type: "Certification",
+    icon: azure,
+    iconBg: "#0078D4",
+    date: "In Progress",
+    points: ["AI/ML concepts, responsible AI, and Azure AI services (Vision, Language, Search)."],
+    credential: "https://learn.microsoft.com/certifications/azure-ai-fundamentals/",
+  },
+  {
+    title: "Microsoft Certified: Azure Developer Associate (AZ‑204)",
+    type: "Certification",
+    icon: azure,
+    iconBg: "#0078D4",
+    date: "In Progress",
+    points: ["Design, build, and monitor Azure apps; storage, compute, identity, and security."],
+    credential: "https://learn.microsoft.com/certifications/azure-developer/",
+  },
+
+  // ── Containers, DevOps, and Kubernetes
+  {
+    title: "Docker Certified Associate (DCA)",
+    type: "Certification",
+    icon: docker,
+    iconBg: "#0db7ed",
+    date: "In Progress",
+    points: ["Container lifecycle, images, networking, security, and Docker in production."],
+    credential: "https://training.mirantis.com/certification/dca-certification-exam/",
+  },
+  {
+    title: "Kubernetes and Cloud Native Associate (KCNA)",
+    type: "Certification",
+    icon: docker, // TODO: replace with `kubernetes` icon when available
+    iconBg: "#326CE5",
+    date: "In Progress",
+    points: ["Kubernetes fundamentals, cloud‑native landscape, and CNCF ecosystem basics."],
+    credential:
+      "https://training.linuxfoundation.org/certification/kubernetes-and-cloud-native-associate-kcna/",
+  },
+  {
+    title: "Certified Kubernetes Application Developer (CKAD)",
+    type: "Certification",
+    icon: docker, // TODO: replace with `kubernetes` icon when available
+    iconBg: "#326CE5",
+    date: "In Progress",
+    points: [
+      "Design and build cloud‑native apps: Pods, Deployments, services, config, and observability.",
+    ],
+    credential:
+      "https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/",
+  },
+
+  // ── AI / ML
+  {
+    title: "Google IT Automation with Python (Professional Certificate)",
+    type: "Professional Certificate",
+    icon: google,
+    iconBg: "#000000",
+    date: "In Progress",
+    points: ["Python automation, Git, troubleshooting, and configuration management."],
+    credential: "https://www.coursera.org/professional-certificates/google-it-automation",
+  },
+  {
+    title: "TensorFlow Developer Certificate",
+    type: "Certification",
+    icon: google, // placeholder
+    iconBg: "#000000",
+    date: "In Progress",
+    points: ["Train, evaluate, and deploy TensorFlow models for CV/NLP basics."],
+    credential: "https://www.tensorflow.org/certificate",
+  },
 ];
 
 const projects = [
   {
+    name: "RCA Copilot — Root Cause Analysis (Alstom) 🤖",
+    description:
+      "Internal RCA tool that accelerates diagnostics using a React chat UI with RAG over specs, incidents, and test logs. Runs on Azure (Functions/Container Apps) with an LLM (Azure OpenAI), vector index (FAISS/Milvus), streaming diagnostics via Kafka, and time‑series analytics in InfluxDB; exposes secure REST endpoints (OpenAPI/TLS/RBAC).",
+    tags: [
+      { name: "RAG / LLM", color: "blue-text-gradient" },
+      { name: "Azure", color: "green-text-gradient" },
+      { name: "React", color: "pink-text-gradient" },
+      { name: "Kafka", color: "blue-text-gradient" },
+      { name: "InfluxDB", color: "green-text-gradient" },
+      { name: "OpenAPI / TLS", color: "pink-text-gradient" },
+    ],
+    image: rootcauseanalysis, // replace with your prompt‑UI screenshot when ready
+    source_code_link: "",
+    live_project_link: "",
+  },
+
+  {
+    name: "STM32 Drivers from Scratch ⚙️",
+    description:
+      "Bare‑metal GPIO/RCC/NVIC/SysTick/UART/SPI/I2C drivers for ARM Cortex‑M with CMSIS integration and unit tests—focused on correctness and register‑level control.",
+    tags: [
+      { name: "C (Bare‑metal)", color: "blue-text-gradient" },
+      { name: "ARM Cortex‑M", color: "green-text-gradient" },
+      { name: "CMSIS", color: "pink-text-gradient" },
+      { name: "Unit Testing", color: "blue-text-gradient" },
+    ],
+    image: atmega,
+    source_code_link: "https://github.com/MarwanTarekZaky?tab=repositories",
+    live_project_link: "https://github.com/MarwanTarekZaky?tab=repositories",
+  },
+
+  {
+    name: "UDS‑over‑CAN Bootloader (STM32) 🚗",
+    description:
+      "Bootloader implementing UDS‑over‑CAN flashing with CRC and rollback protection; includes a Python desktop flasher and diagnostic tester.",
+    tags: [
+      { name: "C / UDS / CAN", color: "blue-text-gradient" },
+      { name: "Bootloader", color: "green-text-gradient" },
+      { name: "Python (Tools)", color: "pink-text-gradient" },
+      { name: "Diagnostics", color: "blue-text-gradient" },
+    ],
+    image: atmega,
+    source_code_link: "https://github.com/MarwanTarekZaky?tab=repositories",
+    live_project_link: "https://github.com/MarwanTarekZaky?tab=repositories",
+  },
+
+  {
+    name: "FreeRTOS Smart Sensor Node 📡",
+    description:
+      "Multi‑tasking sensor node with queues/semaphores, periodic telemetry over UART/CAN, and low‑power modes for embedded efficiency.",
+    tags: [
+      { name: "C / FreeRTOS", color: "blue-text-gradient" },
+      { name: "Concurrency", color: "green-text-gradient" },
+      { name: "Low Power", color: "pink-text-gradient" },
+      { name: "Telemetry", color: "blue-text-gradient" },
+    ],
+    image: atmega,
+    source_code_link: "https://github.com/MarwanTarekZaky?tab=repositories",
+    live_project_link: "https://github.com/MarwanTarekZaky?tab=repositories",
+  },
+
+  {
+    name: "Packet I/O Playground (Linux) 🐧",
+    description:
+      "Userspace packet capture and fast‑path experiments on Linux; instrumented with perf and Valgrind to study throughput and hotspots.",
+    tags: [
+      { name: "C/C++", color: "blue-text-gradient" },
+      { name: "Linux / Networking", color: "green-text-gradient" },
+      { name: "perf / Valgrind", color: "pink-text-gradient" },
+      { name: "Performance", color: "blue-text-gradient" },
+    ],
+    image: ubuntu,
+    source_code_link: "https://github.com/MarwanTarekZaky?tab=repositories",
+    live_project_link: "https://github.com/MarwanTarekZaky?tab=repositories",
+  },
+
+  {
     name: "Formula Racing 🏎️",
     description:
-      "🏁 Formula - ASP.NET Core MVC Racing Events Platform Formula is a full-featured web application built with ASP.NET Core MVC. It enables administrators to manage racing events, cars, banners, and bookings with a sleek UI and rich media features. The client-facing interface offers an interactive experience for users, including image sliders, modals, and dynamic dropdowns.",
+      "ASP.NET Core MVC racing events platform: admin dashboards for cars, banners, bookings; client UI with sliders/modals and dynamic filters.",
     tags: [
-      {
-        name: "C# .net Core MVC",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Javascript/JQuery",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Bootstrap CSS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "SQL Server",
-        color: "blue-text-gradient",
-      },
+      { name: "C# / .NET Core MVC", color: "blue-text-gradient" },
+      { name: "JavaScript / jQuery", color: "green-text-gradient" },
+      { name: "Bootstrap", color: "pink-text-gradient" },
+      { name: "SQL Server", color: "blue-text-gradient" },
     ],
     image: formula,
     source_code_link: "https://github.com/MarwanTarekZaky/FormulaRacing",
     live_project_link: "https://github.com/MarwanTarekZaky/FormulaRacing",
-  },
- 
-  {
-    name: "Embedded Systems Projects in C++ 🌐",
-    description:
-      "Developed a custom memory pool allocator to optimize memory usage, a multi-threaded file compression tool for efficient data storage, and a real-time data processing system for low-latency sensor handling. Each project emphasizes performance, concurrency, and resource efficiency in embedded environments.",
-    tags: [
-      {
-        name: "C/C++ Embedded C",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "AVR & ARM",
-        color: "green-text-gradient",
-      },
-      {
-        name: "CAN/UART/SPI/I2C",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Authentication/Flashing",
-        color: "blue-text-gradient",
-      },
-    ],
-    image: atmega,
-    source_code_link: "https://github.com/MarwanTarekZaky/cpp-projects/tree/main/embedded-projects",
-    live_project_link: "https://github.com/MarwanTarekZaky/cpp-projects/tree/main/embedded-projects",
-  },
-  
-  
-  {
-    name: "Valeo SCALA™ LiDAR 🐞🔎 👨🏻‍💻",
-    description:
-      "Involved in developing and testing the Valeo SCALA™ LiDAR, a cutting-edge automotive sensor. This project focused on enhancing the sensor's performance and reliability through rigorous testing and validation processes. Collaborated with cross-functional teams to ensure seamless integration of the LiDAR system into vehicles, contributing to advancements in autonomous driving technology.",
-    tags: [
-      {
-        name: "c++",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "AUTOSAR",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Embedded systems",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "data-algorithms",
-        color: "blue-text-gradient",
-      },
-    ],
-    image: scala3,
-    source_code_link: "hhttps://www.valeo.com/en/valeo-scala-lidar/",
-    live_project_link: "https://www.valeo.com/en/valeo-scala-lidar/",
   },
 ];
 
@@ -403,5 +456,5 @@ export {
   extracurricular,
   projects,
   education,
-  testimonials
+  testimonials,
 };

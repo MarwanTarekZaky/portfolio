@@ -11,6 +11,7 @@ import close from "./close.svg";
 import scala3 from "./scala3.jpg";
 import atmega from "./atmega.jpeg";
 import formula from "./formula.png";
+import rootcauseanalysis from "./rootcauseanalysis.png";
 import amazon from "./amazon.png";
 import helwan from "./helwan.png";
 import Valeo from "./Valeo.png";
@@ -24,35 +25,67 @@ import css from "./tech/css.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
-import CSharp from "./tech/CSharp.png";
-import ubuntu from "./tech/ubuntu.png";
-import C from "./tech/C.png";
+import CSharp from "./csharp.png";
+import ubuntu from "./ubuntu.jpeg";
+import C from "./c-language.png";
 import postgresql from "./tech/postgresql.png";
 import mongodb from "./tech/mongodb.png";
 import linux from "./tech/linux.png";
-import tailwind from "./tech/tailwind.png";
-import python from "./tech/python.png"
-import cplusplus from "./tech/c++.svg"
-import typescript from "./tech/typescript.png"
-import DotNet from "./tech/DotNet.png"
+import tailwind from "./tailwindcss.png";
+import python from "./python.jpeg"
+import cplusplus from "./cplusplus.png"
+import typescript from "./typescript.png"
+import DotNet from "./dotnet.png"
 
-import azure from "./tech/azure.png";
-import powershell from "./tech/powershell.svg"
-import VTest from "./tech/VTest.jpeg"
-import rider from "./tech/rider.svg"
-import virtualbox from "./tech/virtualbox.png"
-import kalilinux from "./tech/kali_linux.svg"
-import wireshark from "./tech/wireshark.png"
-import Qt from "./tech/Qt.png"
-import metasploit from "./tech/metasploit.svg"
-import iSystem from "./tech/iSystem.jpeg"
-import hydra from "./tech/hydra.svg"
-import aircrackng from "./tech/aircrackng.svg"
+import azure from "./azure.jpeg";
 
-import photoshop from "./tech/photoshop.svg"
-import premiere from "./tech/premiere.svg"
-import cinema4d from "./tech/cinema4d.png"
-import blender from "./tech/blender.svg"
+// New imports for missing tech
+import aspnet from "./aspnet.jpeg";
+import entityframework from "./entity-framework.png";
+import freertos from "./freertos.jpeg";
+import stm32 from "./stm32.jpeg";
+import canoe from "./vector-canoe.png";
+import canalyzer from "./vector-canalyzer.jpeg";
+import davinci from "./davinci-configurator.png";
+
+// Import the copy (filename contains a space) to avoid resolution issues
+import artemis from "./artemis.png";
+import kafka from "./kafka.png";
+import vmware from "./vmware.png";
+import valgrind from "./valgrind.png";
+import gdb from "./gdb.png";
+import ninja from "./ninja.jpeg";
+import make from "./make.png";
+import robotframework from "./robot-framework.png";
+import html5 from "./html5.png";
+import sqlserver from "./sqlserver.png";
+import redis from "./redis.png";
+import kubernetes from "./kubernetes.png";
+import gitlab from "./gitlab.png";
+import jenkins from "./jenkins.png";
+import postman from "./postman.jpeg";
+import swagger from "./swagger.png";
+// (kafka already imported above)
+import zephyr from "./zephyr.jpeg";
+import cmake from "./cmake.png";
+import react from "./react.png";
+
+import photoshop from "./adobe-photoshop.png"
+import premiere from "./adobe-premiere-pro.png"
+import cinema4d from "./cinema4d.jpeg"
+import blender from "./blender.jpeg"
+
+import powershell from "./powershell.jpeg"
+import VTest from "./vteststudio.jpeg"
+import rider from "./rider.jpeg"
+import virtualbox from "./virtualbox.jpeg"
+import kalilinux from "./kali-linux.png"
+import wireshark from "./wireshark.png"
+import Qt from "./qt.png"
+import metasploit from "./metasploit.png"
+import iSystem from "./isystem-winidea.png"
+import hydra from "./hydra.png"
+import aircrackng from "./aircrack-ng.jpeg"
 
 
 import otu from "./company/otu.png"
@@ -147,5 +180,33 @@ export {
   mysql,
   DotNet,
   azure,
-  staples
+  staples,
+  // New exports
+  aspnet,
+  entityframework,
+  freertos,
+  stm32,
+  canoe,
+  canalyzer,
+  davinci,
+  artemis,
+  vmware,
+  valgrind,
+  gdb,
+  ninja,
+  make,
+  robotframework,
+  html5,
+  sqlserver,
+  redis,
+  kubernetes,
+  gitlab,
+  jenkins,
+  postman,
+  swagger,
+  kafka,
+  zephyr,
+  cmake,
+  react,
+  rootcauseanalysis,
 };
