@@ -9,6 +9,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { EMAIL, PHONE_DISPLAY, PHONE_TEL } from "../constants";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faComment, faPaperPlane, faSpinner, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -90,7 +91,7 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "Marwan Zaky",
+          to_name: "Marwan Tarek Zaky",
           from_email: form.email,
           to_email: "marwantarekzaky@gmail.com",
           message: form.message,
@@ -150,14 +151,19 @@ const Contact = () => {
         <div className="flex justify-between items-center mb-4">
           <p className={styles.sectionSubText}>Get in touch</p>
           <a
-            href="tel:+14372161611"
+            href={`tel:${PHONE_TEL}`}
             className="text-purple-500 hover:text-purple-400 transition-colors duration-300 flex items-center"
           >
             <FontAwesomeIcon icon={faPhone} className="mr-2" />
-            (+20) 1024093502
+            {PHONE_DISPLAY}
           </a>
         </div>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <p className="mt-4 text-secondary text-[16px]">
+          Email me at{" "}
+          <a href={`mailto:${EMAIL}`} className="text-purple-400 hover:text-purple-300 underline">{EMAIL}</a>{" "}
+          or send a message below.
+        </p>
 
         <form
           ref={formRef}

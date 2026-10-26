@@ -3,252 +3,189 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import * as A from "../assets";
 
-// Import all assets
-import {
-  // Programming
-  CSharp, cplusplus, C, python, typescript, javascript,
-  DotNet, aspnet, entityframework, react,
-  postgresql, mongodb, sqlserver, mysql, redis, tailwind,
-  // Tools
-  azure, aws, docker, kubernetes,
-  git, github, gitlab, jenkins,
-  postman, swagger, robotframework,
-  kafka, artemis,
-  ubuntu, powershell, vmware, virtualbox, kalilinux, wireshark,
-  Qt, rider,
-  stm32, freertos, zephyr, VTest, iSystem, canoe, canalyzer, davinci,
-  cmake, make, ninja, gdb, valgrind,
-} from "../assets";
-
-// Languages & Frameworks (things you actively code in)
-const programming = [
-  { name: "C#", icon: CSharp },
-  { name: "C++", icon: cplusplus },
-  { name: "C", icon: C },
-  { name: "Python", icon: python },
-  { name: "TypeScript", icon: typescript },
-  { name: "JavaScript", icon: javascript },
-
-  { name: ".NET", icon: DotNet },
-  { name: "ASP.NET Core", icon: aspnet },
-  { name: "Entity Framework", icon: entityframework },
-  { name: "React", icon: react },
-
-  { name: "PostgreSQL", icon: postgresql },
-  { name: "MongoDB", icon: mongodb },
-  { name: "SQL Server", icon: sqlserver },
-  { name: "MySQL", icon: mysql },
-  { name: "Redis", icon: redis },
-
-  { name: "Tailwind CSS", icon: tailwind },
+// Skill groups — keep in sync with the CV's "Core Skills" section.
+const categories = [
+  {
+    key: "languages",
+    items: [
+      { name: "Python", icon: A.pythonIcon },
+      { name: "TypeScript", icon: A.typescriptIcon },
+      { name: "JavaScript", icon: A.javascriptIcon },
+      { name: "C#", icon: A.csharpIcon },
+      { name: "C++", icon: A.cplusplusIcon },
+      { name: "C", icon: A.cIcon },
+      { name: "Bash / Shell", icon: A.bashIcon },
+    ],
+  },
+  {
+    key: "backend",
+    items: [
+      { name: "FastAPI", icon: A.fastapiIcon },
+      { name: "Flask", icon: A.flaskIcon },
+      { name: "Pydantic", icon: A.pydanticIcon },
+      { name: "SQLAlchemy", icon: A.sqlalchemyIcon },
+      { name: ".NET", icon: A.dotnetIcon },
+      { name: "ASP.NET Core", icon: A.aspnetIcon },
+      { name: "Entity Framework", icon: A.entityframeworkIcon },
+      { name: "Node.js", icon: A.nodejsIcon },
+      { name: "Express", icon: A.expressIcon },
+      { name: "GraphQL", icon: A.graphqlIcon },
+      { name: "gRPC", icon: A.grpcIcon },
+      { name: "OpenAPI / Swagger", icon: A.swaggerIcon },
+    ],
+  },
+  {
+    key: "frontend",
+    items: [
+      { name: "React", icon: A.reactIcon },
+      { name: "Vite", icon: A.viteIcon },
+      { name: "Tailwind CSS", icon: A.tailwindIcon },
+      { name: "Material UI", icon: A.muiIcon },
+      { name: "HTML5 / CSS3", icon: A.html5Icon },
+    ],
+  },
+  {
+    key: "ai_llm",
+    items: [
+      { name: "AI Agents / RAG", icon: A.agentsIcon },
+      { name: "vLLM", icon: A.vllmIcon },
+      { name: "Azure OpenAI", icon: A.azureIcon },
+      { name: "PyTorch", icon: A.pytorchIcon },
+      { name: "Hugging Face", icon: A.huggingfaceIcon },
+      { name: "Qdrant", icon: A.qdrantIcon },
+      { name: "NumPy", icon: A.numpyIcon },
+      { name: "Pandas", icon: A.pandasIcon },
+    ],
+  },
+  {
+    key: "data_messaging",
+    items: [
+      { name: "PostgreSQL", icon: A.postgresqlIcon },
+      { name: "TimescaleDB", icon: A.timescaleIcon },
+      { name: "MongoDB", icon: A.mongodbIcon },
+      { name: "Redis", icon: A.redisIcon },
+      { name: "SQL Server", icon: A.sqlserverIcon },
+      { name: "InfluxDB", icon: A.influxdbIcon },
+      { name: "Apache Kafka", icon: A.kafkaIcon },
+      { name: "ActiveMQ Artemis", icon: A.activemqIcon },
+      { name: "RabbitMQ", icon: A.rabbitmqIcon },
+    ],
+  },
+  {
+    key: "cloud_devops",
+    items: [
+      { name: "Microsoft Azure", icon: A.azureIcon },
+      { name: "Docker", icon: A.dockerIcon },
+      { name: "Kubernetes", icon: A.kubernetesIcon },
+      { name: "Rancher", icon: A.rancherIcon },
+      { name: "Harbor", icon: A.harborIcon },
+      { name: "GitLab CI/CD", icon: A.gitlabIcon },
+      { name: "GitHub Actions", icon: A.githubactionsIcon },
+      { name: "Jenkins", icon: A.jenkinsIcon },
+      { name: "Terraform", icon: A.terraformIcon },
+      { name: "Ansible", icon: A.ansibleIcon },
+      { name: "Git", icon: A.gitIcon },
+      { name: "Red Hat Linux", icon: A.redhatIcon },
+    ],
+  },
+  {
+    key: "security_observability_testing",
+    items: [
+      { name: "Keycloak (OIDC)", icon: A.keycloakIcon },
+      { name: "Prometheus", icon: A.prometheusIcon },
+      { name: "Grafana", icon: A.grafanaIcon },
+      { name: "OpenTelemetry", icon: A.opentelemetryIcon },
+      { name: "PyTest", icon: A.pytestIcon },
+      { name: "Playwright", icon: A.playwrightIcon },
+      { name: "Robot Framework", icon: A.robotframeworkIcon },
+      { name: "Postman", icon: A.postmanIcon },
+    ],
+  },
+  {
+    key: "embedded",
+    items: [
+      { name: "STM32", icon: A.stmIcon },
+      { name: "FreeRTOS", icon: A.freertosIcon },
+      { name: "Zephyr RTOS", icon: A.zephyrIcon },
+      { name: "CMake", icon: A.cmakeIcon },
+      { name: "Vector CANoe", icon: A.canoeIcon },
+      { name: "GDB", icon: A.gdbIcon },
+      { name: "Valgrind", icon: A.valgrindIcon },
+      { name: "Linux", icon: A.linuxIcon },
+    ],
+  },
 ];
 
-// Infrastructure / DevOps / Validation / Embedded tooling
-const itTools = [
-  // Cloud & Containers
-  { name: "Microsoft Azure", icon: azure },
-  { name: "Amazon Web Services (AWS)", icon: aws },
-  { name: "Docker", icon: docker },
-  { name: "Kubernetes", icon: kubernetes },
+// Split a list into honeycomb rows that alternate between a long and a short row.
+const toRows = (items, width) => {
+  const [big, small] = width < 520 ? [3, 2] : width < 1000 ? [4, 3] : [6, 5];
+  const rows = [];
+  let i = 0;
+  let size = big;
+  while (i < items.length) {
+    rows.push(items.slice(i, i + size));
+    i += size;
+    size = size === big ? small : big;
+  }
+  return rows;
+};
 
-  // CI/CD & Collaboration
-  { name: "Git", icon: git },
-  { name: "GitHub", icon: github },
-  { name: "GitLab CI", icon: gitlab },
-  { name: "Jenkins", icon: jenkins },
-
-  // APIs & Testing
-  { name: "Postman", icon: postman },
-  { name: "OpenAPI / Swagger", icon: swagger },
-  { name: "Robot Framework", icon: robotframework },
-
-  // Messaging / Platform
-  { name: "Apache Kafka", icon: kafka },
-  { name: "ActiveMQ Artemis", icon: artemis },
-
-  // OS / Hypervisors / Networking
-  { name: "Ubuntu", icon: ubuntu },
-  { name: "PowerShell", icon: powershell },
-  { name: "VMware", icon: vmware },
-  { name: "VirtualBox", icon: virtualbox },
-  { name: "Kali Linux", icon: kalilinux },
-  { name: "Wireshark", icon: wireshark },
-
-  // UI/Frameworks (tools you use, not “languages”)
-  { name: "Qt", icon: Qt },
-  { name: "Rider", icon: rider },
-
-  // Embedded / Validation
-  { name: "STM32", icon: stm32 },
-  { name: "FreeRTOS", icon: freertos },
-  { name: "Zephyr RTOS", icon: zephyr },
-  { name: "vTESTstudio", icon: VTest },
-  { name: "iSYSTEM (winIDEA)", icon: iSystem },
-  { name: "Vector CANoe", icon: canoe },
-  { name: "Vector CANalyzer", icon: canalyzer },
-  { name: "DaVinci Configurator", icon: davinci },
-
-  // Build & Debug
-  { name: "CMake", icon: cmake },
-  { name: "Make", icon: make },
-  { name: "Ninja", icon: ninja },
-  { name: "GDB", icon: gdb },
-  { name: "Valgrind", icon: valgrind },
-];
-
-const contentProduction = [
-
-];
+const titleStyle = {
+  fontSize: "24px",
+  background: "linear-gradient(90deg, #915EFF, #00BFFF)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundClip: "text",
+  filter: "drop-shadow(0 0 10px #915EFF)",
+};
 
 const Tech = () => {
-  const [rows, setRows] = useState({
-    programming: [],
-    itTools: [],
-   
-  });
-
+  const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1280);
   const ref = useRef(null);
-  const isInView = useInView(ref, { 
-    once: true,
-    amount: 0.2
-  });
+  const isInView = useInView(ref, { once: true, amount: 0.05 });
   const mainControls = useAnimation();
 
   useEffect(() => {
-    if (isInView) {
-      mainControls.start("visible");
-    }
+    if (isInView) mainControls.start("visible");
   }, [isInView, mainControls]);
 
-  const calculateRows = (width, techArray) => {
-    let dynamicRows = [];
-    let startIndex = 0;
-    let rowSize = 6;
-
-    if (width < 500) {
-      dynamicRows = [
-        techArray.slice(0, 3),
-        techArray.slice(3, 5),
-        techArray.slice(5, 8),
-        techArray.slice(8, 10),
-      ];
-    } else {
-      while (startIndex < techArray.length) {
-        const endIndex = startIndex + rowSize;
-        dynamicRows.push(techArray.slice(startIndex, endIndex));
-        startIndex += rowSize;
-        rowSize = rowSize === 6 ? 5 : 6;
-      }
-    }
-
-    return dynamicRows;
-  };
-
   useEffect(() => {
-    const calculateRowsForAllCategories = () => {
-      const rowsData = {
-        programming: calculateRows(window.innerWidth, programming),
-        itTools: calculateRows(window.innerWidth, itTools),
-        
-      };
-      setRows(rowsData);
-    };
-
-    calculateRowsForAllCategories();
-
-    const handleResize = () => {
-      calculateRowsForAllCategories();
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
+    const onResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const hexagonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      transition: { 
-        delay: Math.random() * 1.5, 
-        duration: 0.5, 
-        type: "spring" 
-      } 
-    },
-    hover: {
-      scale: 1.05,
-      zIndex: 2,
-      transition: { duration: 0.3 }
-    }
-  };
-
-  const renderCategory = (categoryName, categoryRows) => (
+  const renderCategory = ({ key, items }) => (
     <motion.div
-      key={categoryName}
+      key={key}
       className="category-container"
       initial="hidden"
       animate={mainControls}
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
-      }}
+      variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.5 } } }}
     >
-      <motion.h2
-        className="category-title top"
-        variants={{
-          hidden: { opacity: 0, y: -20 },
-          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-        }}
-        style={{
-          fontFamily: "'', cursive",
-          fontSize: "26px",
-          background: "linear-gradient(90deg, #915EFF, #00BFFF)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-          textFillColor: "transparent",
-          filter: "drop-shadow(0 0 10px #915EFF)",
-        }}
-      >{`<${categoryName}>`}</motion.h2>
+      <h3 className="category-title top" style={titleStyle}>{`<${key}>`}</h3>
       <div className="honeycomb-grid">
-        {categoryRows?.map((row, rowIndex) => (
-          <div
-            key={`${categoryName}-row-${rowIndex}`}
-            className={`honeycomb-row ${rowIndex % 2 === 1 ? "staggered-row" : ""}`}
-          >
+        {toRows(items, width).map((row, rowIndex) => (
+          <div key={`${key}-row-${rowIndex}`} className="honeycomb-row">
             {row.map((tech) => (
               <motion.div
                 key={tech.name}
                 className="hexagon"
-                variants={hexagonVariants}
-                initial="hidden"
-                animate="visible"
-                whileHover="hover"
+                title={tech.name}
+                whileHover={{ scale: 1.06, zIndex: 2 }}
               >
-                <img src={tech.icon} alt={tech.name}  style={{ userSelect: "none" }} draggable="false"/>
+                <div className="hex-tile">
+                  <img src={tech.icon} alt={tech.name} className="hex-icon" draggable="false" loading="lazy" />
+                  <span className="hex-label">{tech.name}</span>
+                </div>
               </motion.div>
             ))}
           </div>
         ))}
       </div>
-      <motion.h2
-        className="category-title bottom"
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-        }}
-        style={{
-          fontFamily: "'', cursive",
-          fontSize: "26px",
-          background: "linear-gradient(90deg, #915EFF, #00BFFF)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-          textFillColor: "transparent",
-          filter: "drop-shadow(0 0 10px #915EFF)",
-        }}
-      >{`</${categoryName}>`}</motion.h2>
+      <h3 className="category-title bottom" style={titleStyle}>{`</${key}>`}</h3>
     </motion.div>
   );
 
@@ -259,9 +196,7 @@ const Tech = () => {
           <p className={`${styles.sectionSubText} text-center`}>Technical Proficiencies</p>
           <h2 className={`${styles.sectionHeadText} text-center`}>Skills.</h2>
         </motion.div>
-        {renderCategory("programming", rows.programming)}
-        {renderCategory("itTools", rows.itTools)}
-    
+        {categories.map(renderCategory)}
       </div>
     </section>
   );

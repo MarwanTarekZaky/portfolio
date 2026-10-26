@@ -13,8 +13,8 @@ const ProjectCard = ({
   description,
   tags,
   image,
+  org,
   source_code_link,
-  live_project_link,
   animate,
 }) => {
   return (
@@ -30,10 +30,12 @@ const ProjectCard = ({
         <div className="relative w-full h-[230px]">
           <img
             src={image}
-            alt="project_image"
+            alt={name}
+            loading="lazy"
             className="w-full h-full object-cover rounded-2xl"
           />
 
+          {source_code_link && (
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
@@ -46,10 +48,16 @@ const ProjectCard = ({
               />
             </div>
           </div>
+          )}
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          {org && (
+            <span className="inline-block mb-2 px-3 py-1 rounded-full text-[12px] font-semibold bg-[#2a1d4c] text-[#c4b5fd]">
+              {org}
+            </span>
+          )}
+          <h3 className="text-white font-bold text-[22px]">{name}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
@@ -61,12 +69,16 @@ const ProjectCard = ({
           ))}
         </div>
 
-        {live_project_link && (
-          <a href={live_project_link} target="_blank" rel="noopener noreferrer">
-            <button className="mt-3 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)]">
-              Live Project
+        {source_code_link ? (
+          <a href={source_code_link} target="_blank" rel="noopener noreferrer">
+            <button className="mt-3 bg-primary text-white px-4 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)]">
+              View Code on GitHub
             </button>
           </a>
+        ) : (
+          <p className="mt-3 text-[12px] text-secondary italic">
+            Internal company project — details available in interview.
+          </p>
         )}
       </Tilt>
     </motion.div>

@@ -3,7 +3,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay, Pagination } from "swiper/modules";
 import { styles } from "../styles";
-import { extracurricular } from "../constants";
+import { courses, studyTopics } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -14,11 +14,11 @@ import 'swiper/css/pagination';
 const CertificationCard = ({ title, icon, type, date, points, credential }) => (
   <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
     <div>
-      <div className="relative w-full h-[50px] mb-4">
+      <div className="relative w-[60px] h-[60px] mb-4 bg-white rounded-xl p-2">
         <img
           src={icon}
           alt={title}
-          className="w-auto h-full object-contain no-select"
+          className="w-full h-full object-contain no-select"
         />
       </div>
       <h3 className="text-white font-bold text-[20px] mb-2 no-select">{title}</h3>
@@ -35,6 +35,7 @@ const CertificationCard = ({ title, icon, type, date, points, credential }) => (
         ))}
       </ul>
     </div>
+    {credential && (
     <div className="mt-4 flex justify-end no-select">
       <a
         href={credential}
@@ -45,6 +46,7 @@ const CertificationCard = ({ title, icon, type, date, points, credential }) => (
         View Credential
       </a>
     </div>
+    )}
   </div>
 );
 
@@ -83,7 +85,7 @@ const Extracurricular = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <p className={`${styles.sectionSubText} text-center`}>Continuous Learning</p>
+        <p className={`${styles.sectionSubText} text-center`}>Continuous Learning · Learning Roadmap 2026</p>
       </motion.div>
 
       <motion.div
@@ -94,7 +96,7 @@ const Extracurricular = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
       >
-        <h2 className={`${styles.sectionHeadText} text-center`}>Certifications</h2>
+        <h2 className={`${styles.sectionHeadText} text-center`}>Courses.</h2>
       </motion.div>
 
       <motion.div 
@@ -134,13 +136,26 @@ const Extracurricular = () => {
           }}
          
         >
-          {extracurricular.map((certification, index) => (
+          {courses.map((certification, index) => (
             <SwiperSlide key={`certification-${index}`}>
               <CertificationCard {...certification} />
             </SwiperSlide>
           ))}
         </Swiper>
       </motion.div>
+
+      <div className="mt-6 max-w-5xl mx-auto text-center">
+        <p className="text-secondary text-[14px] uppercase tracking-wider mb-4">
+          Also studied &amp; practised in 2026
+        </p>
+        <div className="flex flex-wrap justify-center gap-2">
+          {studyTopics.map((t) => (
+            <span key={t} className="px-3 py-1 rounded-full text-[13px] bg-[#1d1836] border border-[#915EFF55] text-[#e9e5ff]">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
 
       <style jsx global>{`
         .mySwiper {
@@ -207,4 +222,4 @@ const Extracurricular = () => {
   );
 };
 
-export default SectionWrapper(Extracurricular, "extracurricular");
+export default SectionWrapper(Extracurricular, "courses");

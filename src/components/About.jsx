@@ -4,7 +4,8 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import { resume, profilepic } from "../assets";
+import { profilepic } from "../assets";
+import { aboutPoints, RESUME_URL, LINKEDIN_URL, GITHUB_URL } from "../constants";
 
 const ServiceCard = ({ index, title, icon }) => (
   <motion.div
@@ -83,7 +84,7 @@ const About = () => {
             <div className="w-full h-full overflow-hidden">
               <img
                 src={profilepic}
-                alt="Marwan Zaky"
+                alt="Marwan Tarek Zaky"
                 className="w-full h-full object-cover"
                 style={{
                   objectFit: "cover",
@@ -101,9 +102,9 @@ const About = () => {
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open(resume, "_blank")}
+              onClick={() => window.open(RESUME_URL, "_blank")}
             >
-              <span className="font-semibold">Resume</span>
+              <span className="font-semibold">Download CV</span>
             </motion.button>
 
             <motion.button
@@ -116,7 +117,7 @@ const About = () => {
               whileTap={{ scale: 0.95 }}
               onClick={() =>
                 window.open(
-                  "https://www.linkedin.com/in/marwan-tarek-zaky/",
+                  LINKEDIN_URL,
                   "_blank",
                 )
               }
@@ -133,7 +134,7 @@ const About = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() =>
-                window.open("https://github.com/MarwanTarekZaky", "_blank")
+                window.open(GITHUB_URL, "_blank")
               }
             >
               <span className="font-semibold">GitHub</span>
@@ -149,75 +150,18 @@ const About = () => {
             variants={fadeIn("", "", 0.1, 1)}
             className="mt-4 text-secondary text-[17px] max-w-3xl space-y-6 list-none"
           >
-            <motion.li
-              className="flex items-start"
-              variants={fadeIn("up", "spring", 0.1, 0.75)}
-            >
-              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
-                👨‍💻
-              </span>
-              <span>
-                I’m a Software & Systems Engineer with 2+ years of hands‑on
-                experience across embedded, backend, and validation—focusing on
-                reliable, production‑grade systems.
-              </span>
-            </motion.li>
-
-            <motion.li
-              className="flex items-start"
-              variants={fadeIn("up", "spring", 0.2, 0.75)}
-            >
-              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
-                🎓
-              </span>
-              <span>
-                B.Sc. in Computer Science (Honours), Helwan University. I care
-                about correctness, scalability, and clean, maintainable design.
-              </span>
-            </motion.li>
-
-            <motion.li
-              className="flex items-start"
-              variants={fadeIn("up", "spring", 0.3, 0.75)}
-            >
-              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
-                🛠
-              </span>
-              <span>
-                Work spans modern C/C++ for embedded (drivers, bootloaders,
-                RTOS, UDS) and platform/backend engineering with .NET Core, EF,
-                and React‑based tooling—shipped in Agile teams.
-              </span>
-            </motion.li>
-
-            <motion.li
-              className="flex items-start"
-              variants={fadeIn("up", "spring", 0.4, 0.75)}
-            >
-              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
-                🔧
-              </span>
-              <span>
-                I automate benches and workflows with Python/Robot Framework and
-                wire systems together with secure REST APIs, CI/CD
-                (GitLab/Jenkins), and messaging (Kafka/ActiveMQ)—deployed on
-                Azure with Docker/Kubernetes.
-              </span>
-            </motion.li>
-
-            <motion.li
-              className="flex items-start"
-              variants={fadeIn("up", "spring", 0.5, 0.75)}
-            >
-              <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
-                💡
-              </span>
-              <span>
-                Always learning—pushing deeper into systems performance, testing
-                discipline, and practical AI/ML where it accelerates diagnostics
-                and analysis.
-              </span>
-            </motion.li>
+            {aboutPoints.map((p, i) => (
+              <motion.li
+                key={i}
+                className="flex items-start"
+                variants={fadeIn("up", "spring", 0.1 * (i + 1), 0.75)}
+              >
+                <span className="mr-4 text-2xl flex-shrink-0" aria-hidden="true">
+                  {p.icon}
+                </span>
+                <span>{p.text}</span>
+              </motion.li>
+            ))}
           </motion.ul>
         </motion.div>
       </div>

@@ -1,212 +1,191 @@
-import profilepic from './pfp.png';
-
+// Images used by the site. Tech logos in ./stack come from the open-source
+// Devicon (MIT) and Simple Icons (CC0) packs.
+import profilepic from "./pfp.jpg";
 import logo from "./logo0.png";
-import backend from "./backend.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
-import fullstack from "./creator.png";
 import github from "./github.png";
-import menu from "./menu.svg";
-import close from "./close.svg";
-import scala3 from "./scala3.jpg";
-import atmega from "./atmega.jpeg";
-import formula from "./formula.png";
-import rootcauseanalysis from "./rootcauseanalysis.png";
-import amazon from "./amazon.png";
+
+// Organisations
 import helwan from "./helwan.png";
 import Valeo from "./Valeo.png";
 import sparksystems from "./sparksystems.jpeg";
 import alstom from "./alstom.jpeg";
 
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import mysql from "./tech/mysql.png";
-import css from "./tech/css.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import CSharp from "./csharp.png";
-import ubuntu from "./ubuntu.jpeg";
-import C from "./c-language.png";
-import postgresql from "./tech/postgresql.png";
-import mongodb from "./tech/mongodb.png";
-import linux from "./tech/linux.png";
-import tailwind from "./tailwindcss.png";
-import python from "./python.jpeg"
-import cplusplus from "./cplusplus.png"
-import typescript from "./typescript.png"
-import DotNet from "./dotnet.png"
+// Project covers
+import coverAiPlatform from "./projects/ai-platform.jpg";
+import coverCoverage from "./projects/coverage.jpg";
+import coverRca from "./projects/rca.jpg";
+import coverSdlc from "./projects/sdlc.jpg";
+import coverRagKb from "./projects/rag-kb.jpg";
+import coverGraphql from "./projects/graphql.jpg";
+import coverOrderMs from "./projects/order-ms.jpg";
+import coverUdsCan from "./projects/uds-can.jpg";
+import coverPacketIo from "./projects/packet-io.jpg";
+import coverFormula from "./projects/formula.jpg";
 
-import azure from "./azure.jpeg";
+// Tech logos (SVG)
+import pythonIcon from "./stack/python.svg";
+import typescriptIcon from "./stack/typescript.svg";
+import javascriptIcon from "./stack/javascript.svg";
+import csharpIcon from "./stack/csharp.svg";
+import cplusplusIcon from "./stack/cplusplus.svg";
+import cIcon from "./stack/c.svg";
+import bashIcon from "./stack/bash.svg";
+import fastapiIcon from "./stack/fastapi.svg";
+import flaskIcon from "./stack/flask.svg";
+import pydanticIcon from "./stack/pydantic.svg";
+import sqlalchemyIcon from "./stack/sqlalchemy.svg";
+import dotnetIcon from "./stack/dotnetcore.svg";
+import nodejsIcon from "./stack/nodejs.svg";
+import expressIcon from "./stack/express.svg";
+import graphqlIcon from "./stack/graphql.svg";
+import grpcIcon from "./stack/grpc.svg";
+import swaggerIcon from "./stack/swagger.svg";
+import reactIcon from "./stack/react.svg";
+import viteIcon from "./stack/vite.svg";
+import tailwindIcon from "./stack/tailwindcss.svg";
+import html5Icon from "./stack/html5.svg";
+import muiIcon from "./stack/materialui.svg";
+import pytorchIcon from "./stack/pytorch.svg";
+import numpyIcon from "./stack/numpy.svg";
+import pandasIcon from "./stack/pandas.svg";
+import vllmIcon from "./stack/vllm.svg";
+import huggingfaceIcon from "./stack/huggingface.svg";
+import qdrantIcon from "./stack/qdrant.svg";
+import agentsIcon from "./stack/agents.svg";
+import postgresqlIcon from "./stack/postgresql.svg";
+import timescaleIcon from "./stack/timescale.svg";
+import mongodbIcon from "./stack/mongodb.svg";
+import redisIcon from "./stack/redis.svg";
+import sqlserverIcon from "./stack/sqlserver.svg";
+import influxdbIcon from "./stack/influxdb.svg";
+import kafkaIcon from "./stack/kafka.svg";
+import rabbitmqIcon from "./stack/rabbitmq.svg";
+import azureIcon from "./stack/azure.svg";
+import dockerIcon from "./stack/docker.svg";
+import kubernetesIcon from "./stack/kubernetes.svg";
+import rancherIcon from "./stack/rancher.svg";
+import harborIcon from "./stack/harbor.svg";
+import gitlabIcon from "./stack/gitlab.svg";
+import githubactionsIcon from "./stack/githubactions.svg";
+import jenkinsIcon from "./stack/jenkins.svg";
+import terraformIcon from "./stack/terraform.svg";
+import ansibleIcon from "./stack/ansible.svg";
+import gitIcon from "./stack/git.svg";
+import redhatIcon from "./stack/redhat.svg";
+import linuxIcon from "./stack/linux.svg";
+import prometheusIcon from "./stack/prometheus.svg";
+import grafanaIcon from "./stack/grafana.svg";
+import opentelemetryIcon from "./stack/opentelemetry.svg";
+import keycloakIcon from "./stack/keycloak.svg";
+import pytestIcon from "./stack/pytest.svg";
+import playwrightIcon from "./stack/playwright.svg";
+import robotframeworkIcon from "./stack/robotframework.svg";
+import postmanIcon from "./stack/postman.svg";
+import cmakeIcon from "./stack/cmake.svg";
+import stmIcon from "./stack/stmicroelectronics.svg";
+import metaIcon from "./stack/meta.svg";
+import courseraIcon from "./stack/coursera.svg";
+import websocketIcon from "./stack/websocket.svg";
+import microservicesIcon from "./stack/microservices.svg";
 
-// New imports for missing tech
-import aspnet from "./aspnet.jpeg";
-import entityframework from "./entity-framework.png";
-import freertos from "./freertos.jpeg";
-import stm32 from "./stm32.jpeg";
-import canoe from "./vector-canoe.png";
-import canalyzer from "./vector-canalyzer.jpeg";
-import davinci from "./davinci-configurator.png";
-
-// Import the copy (filename contains a space) to avoid resolution issues
-import artemis from "./artemis.png";
-import kafka from "./kafka.png";
-import vmware from "./vmware.png";
-import valgrind from "./valgrind.png";
-import gdb from "./gdb.png";
-import ninja from "./ninja.jpeg";
-import make from "./make.png";
-import robotframework from "./robot-framework.png";
-import html5 from "./html5.png";
-import sqlserver from "./sqlserver.png";
-import redis from "./redis.png";
-import kubernetes from "./kubernetes.png";
-import gitlab from "./gitlab.png";
-import jenkins from "./jenkins.png";
-import postman from "./postman.jpeg";
-import swagger from "./swagger.png";
-// (kafka already imported above)
-import zephyr from "./zephyr.jpeg";
-import cmake from "./cmake.png";
-import react from "./react.png";
-
-import photoshop from "./adobe-photoshop.png"
-import premiere from "./adobe-premiere-pro.png"
-import cinema4d from "./cinema4d.jpeg"
-import blender from "./blender.jpeg"
-
-import powershell from "./powershell.jpeg"
-import VTest from "./vteststudio.jpeg"
-import rider from "./rider.jpeg"
-import virtualbox from "./virtualbox.jpeg"
-import kalilinux from "./kali-linux.png"
-import wireshark from "./wireshark.png"
-import Qt from "./qt.png"
-import metasploit from "./metasploit.png"
-import iSystem from "./isystem-winidea.png"
-import hydra from "./hydra.png"
-import aircrackng from "./aircrack-ng.jpeg"
-
-
-import otu from "./company/otu.png"
-import rhhs from "./company/rhhs.jpg"
-import wonderland from "./company/wonderland.jpg"
-import mackenziehealth from "./company/mackenziehealth.png"
-import privcurity from "./company/privcurity.jpg"
-import staples from "./company/staples.png"
-import google from "./company/google.png"
-import whmis from "./company/whmis.png"
-import aws from "./tech/aws.png";
-
-import sunnifyimage from "./demonstration 2.jpg"
-import knifethrowimage from "./knifethrow_demonstration.jpg"
-import pythonanalysis from "./data_analysis.png"
-import password_generator from "./passwordgenerator.png"
-import wordsearch from "./wordsearchoutput.jpg"
-import financialflowimage from "./FinancialFlowDemonstration.png"
-import enterpriseapitester from "./enterpriseapiui.png"
-
-import resume from "./MarwanResume.pdf";
-import awsdbcert from "./AWS Database Specialty Certified - Sunny Jayendra Patel.jpg"
-import connectwisecert from "./Connectwise-Scripting-Certification.pdf"
+// Existing raster logos (no SVG available)
+import aspnetIcon from "./aspnet.jpeg";
+import entityframeworkIcon from "./entity-framework.png";
+import activemqIcon from "./artemis.png";
+import freertosIcon from "./freertos.jpeg";
+import zephyrIcon from "./zephyr.jpeg";
+import canoeIcon from "./vector-canoe.png";
+import gdbIcon from "./gdb.png";
+import valgrindIcon from "./valgrind.png";
 
 export {
+  profilepic,
   logo,
-  backend,
-  mobile,
-  web,
-  scala3,
-  atmega,
-  formula,
-  amazon,
+  github,
   helwan,
   Valeo,
   sparksystems,
   alstom,
-  fullstack,
-  github,
-  menu,
-  close,
-  css,
-  git,
-  html,
-  javascript,
-  CSharp,
-  ubuntu,
-  C,
-  linux,
-  tailwind,
-  postgresql,
-  mongodb,
-  aws,
-  otu,
-  rhhs,
-  wonderland,
-  mackenziehealth,
-  privcurity,
-  google,
-  whmis,
-  sunnifyimage,
-  knifethrowimage,
-  pythonanalysis,
-  password_generator,
-  wordsearch,
-  python,
-  cplusplus,
-  typescript,
-  powershell,
-  VTest,
-  rider,
-  virtualbox,
-  kalilinux,
-  wireshark,
-  Qt,
-  metasploit,
-  iSystem,
-  hydra,
-  aircrackng,
-  photoshop,
-  premiere,
-  cinema4d,
-  blender,
-  resume,
-  awsdbcert,
-  connectwisecert,
-  financialflowimage,
-  enterpriseapitester,
-  profilepic,
-  docker,
-  figma,
-  mysql,
-  DotNet,
-  azure,
-  staples,
-  // New exports
-  aspnet,
-  entityframework,
-  freertos,
-  stm32,
-  canoe,
-  canalyzer,
-  davinci,
-  artemis,
-  vmware,
-  valgrind,
-  gdb,
-  ninja,
-  make,
-  robotframework,
-  html5,
-  sqlserver,
-  redis,
-  kubernetes,
-  gitlab,
-  jenkins,
-  postman,
-  swagger,
-  kafka,
-  zephyr,
-  cmake,
-  react,
-  rootcauseanalysis,
+  coverAiPlatform,
+  coverCoverage,
+  coverRca,
+  coverSdlc,
+  coverRagKb,
+  coverGraphql,
+  coverOrderMs,
+  coverUdsCan,
+  coverPacketIo,
+  coverFormula,
+  pythonIcon,
+  typescriptIcon,
+  javascriptIcon,
+  csharpIcon,
+  cplusplusIcon,
+  cIcon,
+  bashIcon,
+  fastapiIcon,
+  flaskIcon,
+  pydanticIcon,
+  sqlalchemyIcon,
+  dotnetIcon,
+  nodejsIcon,
+  expressIcon,
+  graphqlIcon,
+  grpcIcon,
+  swaggerIcon,
+  reactIcon,
+  viteIcon,
+  tailwindIcon,
+  html5Icon,
+  muiIcon,
+  pytorchIcon,
+  numpyIcon,
+  pandasIcon,
+  vllmIcon,
+  huggingfaceIcon,
+  qdrantIcon,
+  agentsIcon,
+  postgresqlIcon,
+  timescaleIcon,
+  mongodbIcon,
+  redisIcon,
+  sqlserverIcon,
+  influxdbIcon,
+  kafkaIcon,
+  rabbitmqIcon,
+  azureIcon,
+  dockerIcon,
+  kubernetesIcon,
+  rancherIcon,
+  harborIcon,
+  gitlabIcon,
+  githubactionsIcon,
+  jenkinsIcon,
+  terraformIcon,
+  ansibleIcon,
+  gitIcon,
+  redhatIcon,
+  linuxIcon,
+  prometheusIcon,
+  grafanaIcon,
+  opentelemetryIcon,
+  keycloakIcon,
+  pytestIcon,
+  playwrightIcon,
+  robotframeworkIcon,
+  postmanIcon,
+  cmakeIcon,
+  stmIcon,
+  metaIcon,
+  courseraIcon,
+  websocketIcon,
+  microservicesIcon,
+  aspnetIcon,
+  entityframeworkIcon,
+  activemqIcon,
+  freertosIcon,
+  zephyrIcon,
+  canoeIcon,
+  gdbIcon,
+  valgrindIcon,
 };

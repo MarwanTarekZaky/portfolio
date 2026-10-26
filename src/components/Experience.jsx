@@ -40,8 +40,14 @@ const ExperienceDetails = React.memo(({ experience }) => {
       className="bg-tertiary p-8 rounded-lg"
     >
       <h3 className="text-white text-[24px] font-bold mb-4">{experience.title}</h3>
-      <p className="text-secondary text-[16px] mb-4">{experience.company_name}</p>
-      <p className="text-white-100 text-[14px] mb-4">{experience.date}</p>
+      <p className="text-secondary text-[16px] mb-1">{experience.company_name}</p>
+      <p className="text-white-100 text-[14px] mb-2">
+        {experience.date}
+        {experience.location ? ` · ${experience.location}` : ""}
+      </p>
+      {experience.context && (
+        <p className="text-[#c4b5fd] text-[14px] italic mb-4">{experience.context}</p>
+      )}
       <ul className="list-disc ml-5 space-y-2">
         {experience.points.map((point, index) => (
           <li

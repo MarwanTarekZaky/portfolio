@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { useState, useEffect } from "react";
+import { heroRoles, RESUME_URL, LINKEDIN_URL, GITHUB_URL } from "../constants";
 
 const TypewriterText = ({ texts }) => {
   const [displayText, setDisplayText] = useState("");
@@ -80,13 +81,7 @@ const WavingHand = () => {
 };
 
 const Hero = () => {
-  const typedItems = [
-    "Software & Systems Engineer",
-    "Embedded Tools & Validation (C++/Python)",
-    ".NET Backend Engineer (ASP.NET Core · EF)",
-    "Cloud & DevOps (Azure · Docker · Kubernetes)",
-    "AI/RAG for Root‑Cause Analysis",
-  ];
+  const typedItems = heroRoles;
 
   return (
     <section className="relative w-full h-screen mx-auto">
@@ -137,9 +132,25 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I'm a <TypewriterText texts={typedItems} />
-            <br />
-            <b>Welcome to my portfolio, Glad You are here!</b>
           </p>
+          <p className="mt-3 text-secondary sm:text-[18px] text-[14px] max-w-2xl">
+            Software Engineer at <b className="text-white">Alstom</b> · Python, React, Generative AI, C#/.NET &amp; C++ ·
+            Giza, Egypt · open to relocation &amp; remote
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3 relative z-10">
+            <a href={RESUME_URL} target="_blank" rel="noopener noreferrer"
+              className="px-5 py-2 rounded-md bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-[14px] sm:text-[16px] hover:scale-105 transition">
+              Download CV
+            </a>
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer"
+              className="px-5 py-2 rounded-md bg-[#0a66c2] text-white font-semibold text-[14px] sm:text-[16px] hover:scale-105 transition">
+              LinkedIn
+            </a>
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer"
+              className="px-5 py-2 rounded-md bg-gray-800 border border-gray-600 text-white font-semibold text-[14px] sm:text-[16px] hover:scale-105 transition">
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
       <br />
