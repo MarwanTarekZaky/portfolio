@@ -38,7 +38,7 @@ export const PHONE_DISPLAY = "+20 102 409 3502";
 export const PHONE_TEL = "+201024093502";
 // Contact form delivery: paste the free access key from https://web3forms.com
 // (it is emailed to you when you enter your address there). Public by design.
-export const WEB3FORMS_ACCESS_KEY = "";
+export const WEB3FORMS_ACCESS_KEY = "8d144d78-0eb1-4889-8ba8-b9679f95cce4";
 
 export const navLinks = [
   { id: "about", title: "About" },
