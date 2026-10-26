@@ -9,21 +9,57 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import { EMAIL, PHONE_DISPLAY, PHONE_TEL } from "../constants";
+import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WEB3FORMS_ACCESS_KEY } from "../constants";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faComment, faPaperPlane, faSpinner, faPhone } from "@fortawesome/free-solid-svg-icons";
 
-// Messages are delivered to EMAIL through FormSubmit (https://formsubmit.co).
-// If EmailJS keys are ever added in Vercel (VITE_EMAILJS_SERVICE_ID,
-// VITE_EMAILJS_TEMPLATE_ID, VITE_EMAIL_JS_ACCESS_TOKEN), EmailJS is used instead.
+// How messages reach EMAIL, in order of preference:
+//  1. Web3Forms (https://web3forms.com) when WEB3FORMS_ACCESS_KEY is set in
+//     src/constants/index.js. The key is public by design (safe in client code).
+//  2. EmailJS when its three VITE_EMAILJS_* variables are set in Vercel.
+//  3. FormSubmit (https://formsubmit.co) as a last resort.
+// If sending fails, the visitor gets a one-click "send by email" fallback,
+// so a message is never lost.
 const EMAILJS = {
   service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
   template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
   key: import.meta.env.VITE_EMAIL_JS_ACCESS_TOKEN,
 };
 
+const postJson = async (url, payload, timeoutMs = 15000) => {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+      signal: ctrl.signal,
+    });
+    const data = await res.json().catch(() => ({}));
+    return { res, data };
+  } finally {
+    clearTimeout(timer);
+  }
+};
+
 const sendMessage = async ({ name, email, message }) => {
+  const subject = `Portfolio message from ${name}`;
+  if (WEB3FORMS_ACCESS_KEY) {
+    const { res, data } = await postJson("https://api.web3forms.com/submit", {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject,
+      from_name: "Portfolio contact form",
+      name,
+      email,
+      message,
+    });
+    if (!res.ok || data.success !== true) {
+      throw new Error(data.message || data?.body?.message || `Web3Forms HTTP ${res.status}`);
+    }
+    return data;
+  }
   if (EMAILJS.service && EMAILJS.template && EMAILJS.key) {
     return emailjs.send(
       EMAILJS.service,
@@ -32,25 +68,24 @@ const sendMessage = async ({ name, email, message }) => {
       EMAILJS.key
     );
   }
-  const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
-      name,
-      email,
-      message,
-      _replyto: email,
-      _subject: `Portfolio message from ${name}`,
-      _template: "table",
-      _captcha: "false",
-    }),
+  const { res, data } = await postJson(`https://formsubmit.co/ajax/${EMAIL}`, {
+    name,
+    email,
+    message,
+    _replyto: email,
+    _subject: subject,
+    _template: "table",
+    _captcha: "false",
   });
-  const data = await res.json().catch(() => ({}));
   if (!res.ok || String(data.success) !== "true") {
     throw new Error(data.message || `FormSubmit HTTP ${res.status}`);
   }
   return data;
 };
+
+const mailtoFor = ({ name, email, message }) =>
+  `mailto:${EMAIL}?subject=${encodeURIComponent(`Portfolio message from ${name}`)}` +
+  `&body=${encodeURIComponent(`${message}\n\n${name}\n${email}`)}`;
 
 const Contact = () => {
   const formRef = useRef();
@@ -64,6 +99,7 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [fallbackHref, setFallbackHref] = useState(null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [windowDimension, setWindowDimension] = useState({
     width: window.innerWidth,
@@ -133,6 +169,7 @@ const Contact = () => {
     if (formRef.current?.elements?._honey?.value) return;
 
     setLoading(true);
+    setFallbackHref(null);
 
     sendMessage(form)
       .then(
@@ -155,8 +192,9 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
+          setFallbackHref(mailtoFor(form));
           toast.error(
-            `Sorry, the message could not be sent. Please email me directly at ${EMAIL}.`,
+            "The message could not be sent automatically. Use the email button below instead.",
             { duration: 6000, position: 'bottom-right' }
           );
           setCaptchaToken(null);
@@ -307,6 +345,19 @@ const Contact = () => {
               </span>
             )}
           </button>
+
+          {fallbackHref && (
+            <div className="-mt-4 rounded-lg border border-purple-500/50 bg-tertiary p-4 text-center text-secondary text-[15px]">
+              <p>Your message is still here. Send it with your email app in one click:</p>
+              <a
+                href={fallbackHref}
+                className="mt-3 inline-block rounded-lg bg-purple-600 px-5 py-2 font-semibold text-white hover:bg-purple-500"
+              >
+                Send by email
+              </a>
+              <p className="mt-2 text-xs">or write to <a href={`mailto:${EMAIL}`} className="underline text-purple-300">{EMAIL}</a></p>
+            </div>
+          )}
         </form>
       </motion.div>
 
