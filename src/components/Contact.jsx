@@ -14,6 +14,44 @@ import { EMAIL, PHONE_DISPLAY, PHONE_TEL } from "../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faComment, faPaperPlane, faSpinner, faPhone } from "@fortawesome/free-solid-svg-icons";
 
+// Messages are delivered to EMAIL through FormSubmit (https://formsubmit.co).
+// If EmailJS keys are ever added in Vercel (VITE_EMAILJS_SERVICE_ID,
+// VITE_EMAILJS_TEMPLATE_ID, VITE_EMAIL_JS_ACCESS_TOKEN), EmailJS is used instead.
+const EMAILJS = {
+  service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  key: import.meta.env.VITE_EMAIL_JS_ACCESS_TOKEN,
+};
+
+const sendMessage = async ({ name, email, message }) => {
+  if (EMAILJS.service && EMAILJS.template && EMAILJS.key) {
+    return emailjs.send(
+      EMAILJS.service,
+      EMAILJS.template,
+      { from_name: name, to_name: "Marwan Tarek Zaky", from_email: email, to_email: EMAIL, message },
+      EMAILJS.key
+    );
+  }
+  const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      name,
+      email,
+      message,
+      _replyto: email,
+      _subject: `Portfolio message from ${name}`,
+      _template: "table",
+      _captcha: "false",
+    }),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || String(data.success) !== "true") {
+    throw new Error(data.message || `FormSubmit HTTP ${res.status}`);
+  }
+  return data;
+};
+
 const Contact = () => {
   const formRef = useRef();
   const captchaRef = useRef(); // <-- NEW
@@ -83,21 +121,20 @@ const Contact = () => {
       return;
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      toast.error("Please enter a valid email address.", {
+        duration: 3000,
+        position: 'bottom-right',
+      });
+      return;
+    }
+
+    // Spam bots fill every field, including the hidden one.
+    if (formRef.current?.elements?._honey?.value) return;
+
     setLoading(true);
 
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Marwan Tarek Zaky",
-          from_email: form.email,
-          to_email: "marwantarekzaky@gmail.com",
-          message: form.message,
-        },
-        import.meta.env.VITE_EMAIL_JS_ACCESS_TOKEN
-      )
+    sendMessage(form)
       .then(
         () => {
           setLoading(false);
@@ -118,10 +155,12 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-          toast.error("Something went wrong. Please try again.", {
-            duration: 3000,
-            position: 'bottom-right',
-          });
+          toast.error(
+            `Sorry, the message could not be sent. Please email me directly at ${EMAIL}.`,
+            { duration: 6000, position: 'bottom-right' }
+          );
+          setCaptchaToken(null);
+          captchaRef.current?.reset();
         }
       );
   };
@@ -170,6 +209,14 @@ const Contact = () => {
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
+          <input
+            type="text"
+            name="_honey"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ display: "none" }}
+          />
           <div className="flex flex-col sm:flex-row gap-8">
             <div className="flex-1">
               <label className="flex flex-col">
